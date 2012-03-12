@@ -13,6 +13,7 @@ namespace Apriori
         public ResourcesForm()
         {
             InitializeComponent();
+            measureFiled.SelectedIndex = 0;
         }
 
         private void ResourcesForm_Load(object sender, EventArgs e)
@@ -42,10 +43,7 @@ namespace Apriori
             }
             try
             {
-                cafeDataSet.resourcesRow r = cafeDataSet.resources.NewresourcesRow();
-                r.name = nameField.Text;
-                //r.measure_id = (int)measureFiled.SelectedValue;
-                cafeDataSet.resources.AddresourcesRow(r);
+                cafeDataSet.resources.AddresourcesRow(nameField.Text, (String)measureFiled.SelectedItem);
                 nameField.Text = "";
             }
             catch

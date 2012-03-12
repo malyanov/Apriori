@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Apriori
 {
-    public partial class DepartmentsForm : Form
+    public partial class UnderConstructionForm : Form
     {
-        public DepartmentsForm()
+        public UnderConstructionForm()
         {
             InitializeComponent();            
         }

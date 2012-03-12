@@ -74,11 +74,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>cafeDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DepartmentsForm.cs">
+    <Compile Include="UnderConstructionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DepartmentsForm.Designer.cs">
-      <DependentUpon>DepartmentsForm.cs</DependentUpon>
+    <Compile Include="UnderConstructionForm.Designer.cs">
+      <DependentUpon>UnderConstructionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DishesForm.cs">
       <SubType>Form</SubType>
@@ -154,8 +154,8 @@
     <EmbeddedResource Include="AuthForm.resx">
       <DependentUpon>AuthForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DepartmentsForm.resx">
-      <DependentUpon>DepartmentsForm.cs</DependentUpon>
+    <EmbeddedResource Include="UnderConstructionForm.resx">
+      <DependentUpon>UnderConstructionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DishesForm.resx">
       <DependentUpon>DishesForm.cs</DependentUpon>

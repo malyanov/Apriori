@@ -27,7 +27,7 @@ namespace Apriori
 
         private void departmentsBtn_Click(object sender, EventArgs e)
         {
-            (new DepartmentsForm()).ShowDialog(this);
+            (new UnderConstructionForm()).ShowDialog(this);
         }
 
         private void dishesBtn_Click(object sender, EventArgs e)

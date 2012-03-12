@@ -30,14 +30,16 @@ namespace Apriori
 
         private void continueBtn_Click(object sender, EventArgs e)
         {
-            if (nameField.Text.Trim() == "" || descriptionField.Text.Trim() == "")
+            if (nameField.Text.Trim() == "" || descriptionField.Text.Trim() == ""
+                ||marginField.Value==0||fixPriceField.Value==0)
             {
                 MessageBox.Show("Заполните все поля!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             try
             {                
-                //dishesTableAdapter.Update(cafeDataSet.dishes.AdddishesRow(nameField.Text, descriptionField.Text));                
+                dishesTableAdapter.Update(cafeDataSet.dishes.AdddishesRow(nameField.Text, descriptionField.Text, 
+                    (int)marginField.Value, (float)fixPriceField.Value));
                 (new AddIngrForm(dishesTableAdapter.getMaxID().Value, nameField.Text, true)).Show(this);
                 nameField.Text = descriptionField.Text = "";
             }

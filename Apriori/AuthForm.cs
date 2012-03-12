@@ -15,13 +15,15 @@ namespace Apriori
         {
             InitializeComponent();
             navForm.FormClosed += new FormClosedEventHandler(navForm_FormClosed);
-            passwordField.KeyDown += new KeyEventHandler(passwordField_KeyDown);            
+            passwordField.KeyDown += new KeyEventHandler(passwordField_KeyDown);
+            loginField.Text = "admin";
+            passwordField.Text = "12345";            
         }
 
         void passwordField_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                enterBtn_Click(null, null);            
+                enterBtn_Click(null, null);
         }
 
         void navForm_FormClosed(object sender, FormClosedEventArgs e)

@@ -30,25 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             this.resourcesGrid = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.measureidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();            
-            this.cafeDataSet = new Apriori.cafeDataSet();
             this.resourcesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.resourcesTableAdapter = new Apriori.cafeDataSetTableAdapters.resourcesTableAdapter();            
+            this.cafeDataSet = new Apriori.cafeDataSet();
+            this.resourcesTableAdapter = new Apriori.cafeDataSetTableAdapters.resourcesTableAdapter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.addBtn = new System.Windows.Forms.Button();
-            this.measureFiled = new System.Windows.Forms.ComboBox();            
+            this.measureFiled = new System.Windows.Forms.ComboBox();
             this.nameField = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.resourcesGrid)).BeginInit();            
-            ((System.ComponentModel.ISupportInitialize)(this.cafeDataSet)).BeginInit();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.measure = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.resourcesGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resourcesBindingSource)).BeginInit();
-            this.groupBox1.SuspendLayout();            
+            ((System.ComponentModel.ISupportInitialize)(this.cafeDataSet)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // resourcesGrid
@@ -58,54 +58,32 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.resourcesGrid.AutoGenerateColumns = false;
+            this.resourcesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.resourcesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.resourcesGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
-            this.measureidDataGridViewTextBoxColumn});
+            this.measure});
             this.resourcesGrid.DataSource = this.resourcesBindingSource;
             this.resourcesGrid.Location = new System.Drawing.Point(12, 12);
             this.resourcesGrid.Name = "resourcesGrid";
+            this.resourcesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.resourcesGrid.Size = new System.Drawing.Size(630, 322);
             this.resourcesGrid.TabIndex = 0;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "№";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Название";
-            this.nameDataGridViewTextBoxColumn.MaxInputLength = 100;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // measureidDataGridViewTextBoxColumn
-            // 
-            this.measureidDataGridViewTextBoxColumn.DataPropertyName = "measure_id";            
-            this.measureidDataGridViewTextBoxColumn.DisplayMember = "name";
-            this.measureidDataGridViewTextBoxColumn.HeaderText = "Единица измерения";
-            this.measureidDataGridViewTextBoxColumn.Name = "measureidDataGridViewTextBoxColumn";
-            this.measureidDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.measureidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.measureidDataGridViewTextBoxColumn.ValueMember = "id";           
-            // 
-            // cafeDataSet
-            // 
-            this.cafeDataSet.DataSetName = "cafeDataSet";
-            this.cafeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // resourcesBindingSource
             // 
             this.resourcesBindingSource.DataMember = "resources";
             this.resourcesBindingSource.DataSource = this.cafeDataSet;
             // 
+            // cafeDataSet
+            // 
+            this.cafeDataSet.DataSetName = "cafeDataSet";
+            this.cafeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // resourcesTableAdapter
             // 
-            this.resourcesTableAdapter.ClearBeforeFill = true;            
+            this.resourcesTableAdapter.ClearBeforeFill = true;
             // 
             // groupBox1
             // 
@@ -136,15 +114,20 @@
             // 
             // measureFiled
             // 
-            this.measureFiled.Anchor = System.Windows.Forms.AnchorStyles.Bottom;            
+            this.measureFiled.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.measureFiled.DisplayMember = "name";
             this.measureFiled.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.measureFiled.FormattingEnabled = true;
+            this.measureFiled.Items.AddRange(new object[] {
+            "кг",
+            "г",
+            "л",
+            "мл",
+            "шт"});
             this.measureFiled.Location = new System.Drawing.Point(245, 68);
             this.measureFiled.Name = "measureFiled";
             this.measureFiled.Size = new System.Drawing.Size(155, 21);
             this.measureFiled.TabIndex = 2;
-            this.measureFiled.ValueMember = "id";            
             // 
             // nameField
             // 
@@ -208,6 +191,27 @@
             this.deleteBtn.UseVisualStyleBackColor = true;
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "№";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Название";
+            this.nameDataGridViewTextBoxColumn.MaxInputLength = 100;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // measure
+            // 
+            this.measure.DataPropertyName = "measure";
+            this.measure.HeaderText = "Единица измерения";
+            this.measure.MaxInputLength = 10;
+            this.measure.Name = "measure";
+            // 
             // ResourcesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,11 +227,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ингридиенты";
             this.Load += new System.EventHandler(this.ResourcesForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.resourcesGrid)).EndInit();            
-            ((System.ComponentModel.ISupportInitialize)(this.cafeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resourcesGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resourcesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cafeDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();            
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -237,9 +241,7 @@
         private System.Windows.Forms.DataGridView resourcesGrid;
         private cafeDataSet cafeDataSet;
         private System.Windows.Forms.BindingSource resourcesBindingSource;
-        private cafeDataSetTableAdapters.resourcesTableAdapter resourcesTableAdapter;                
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private cafeDataSetTableAdapters.resourcesTableAdapter resourcesTableAdapter;
         private System.Windows.Forms.DataGridViewComboBoxColumn measureidDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox measureFiled;
@@ -250,5 +252,8 @@
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button addBtn;        
         private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn measure;
     }
 }

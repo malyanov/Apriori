@@ -1,6 +1,6 @@
 ﻿namespace Apriori
 {
-    partial class DepartmentsForm
+    partial class UnderConstructionForm
     {
         /// <summary>
         /// Required designer variable.
