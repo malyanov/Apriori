@@ -1,0 +1,37 @@
+c:\users\kvazar\documents\visual studio 2010\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.csprojResolveAssemblyReference.cache
+c:\users\kvazar\documents\visual studio 2010\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.MeasuresForm.resources
+c:\users\kvazar\documents\visual studio 2010\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.Properties.Resources.resources
+c:\users\kvazar\documents\visual studio 2010\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.csproj.GenerateResource.Cache
+c:\users\kvazar\documents\visual studio 2010\Projects\Apriori\Apriori\bin\Debug\Apriori.exe.config
+c:\users\kvazar\documents\visual studio 2010\Projects\Apriori\Apriori\bin\Debug\Apriori.exe
+c:\users\kvazar\documents\visual studio 2010\Projects\Apriori\Apriori\bin\Debug\Apriori.pdb
+c:\users\kvazar\documents\visual studio 2010\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.exe
+c:\users\kvazar\documents\visual studio 2010\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.pdb
+c:\users\kvazar\documents\visual studio 2010\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.NavigationForm.resources
+c:\users\kvazar\documents\visual studio 2010\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.ResourcesForm.resources
+c:\users\kvazar\documents\visual studio 2010\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.DepartmentsForm.resources
+c:\users\kvazar\documents\visual studio 2010\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.AddIngrForm.resources
+c:\users\kvazar\documents\visual studio 2010\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.DishesForm.resources
+C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\bin\Debug\Apriori.exe.config
+C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\bin\Debug\Apriori.exe
+C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\bin\Debug\Apriori.pdb
+C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.csprojResolveAssemblyReference.cache
+C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.AddIngrForm.resources
+C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.AuthForm.resources
+C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.DepartmentsForm.resources
+C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.DishesForm.resources
+C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.KitchenForm.resources
+C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.NavigationForm.resources
+C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.Properties.Resources.resources
+C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.ResourcesForm.resources
+C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.SalesForm.resources
+C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.StockForm.resources
+C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.StockTransForm.resources
+C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.csproj.GenerateResource.Cache
+C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.exe
+C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.pdb
+C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.AboutForm.resources
+C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.ViewSalesForm.resources
+C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.KitchenOrderForm.resources
+C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.WriteOffForm.resources
+C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.ProcessesForm.resources
