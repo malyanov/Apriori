@@ -35,3 +35,6 @@ C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.ViewSales
 C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.KitchenOrderForm.resources
 C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.WriteOffForm.resources
 C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Debug\Apriori.ProcessesForm.resources
+D:\projects\Apriori\Apriori\bin\Debug\Apriori.exe.config
+D:\projects\Apriori\Apriori\obj\x86\Debug\Apriori.exe
+D:\projects\Apriori\Apriori\obj\x86\Debug\Apriori.pdb
