@@ -30,18 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.transactionsGrid = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.transtimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.resource_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stock_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stock_item_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dish_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.department_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kitchen_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kitchen_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kitchenidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockTransViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cafeDataSet = new Apriori.cafeDataSet();
             this.closeBtn = new System.Windows.Forms.Button();
@@ -52,16 +40,24 @@
             this.transEndDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.resourseField = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.departmentField = new System.Windows.Forms.ComboBox();
-            this.departmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.departmentsTableAdapter = new Apriori.cafeDataSetTableAdapters.departmentsTableAdapter();
             this.label5 = new System.Windows.Forms.Label();
             this.sumField = new System.Windows.Forms.TextBox();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.transtimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resource_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stock_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stock_item_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dish_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kitchen_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.margin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fix_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kitchen_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kitchenidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.transactionsGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockTransViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cafeDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // transactionsGrid
@@ -72,6 +68,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.transactionsGrid.AutoGenerateColumns = false;
+            this.transactionsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.transactionsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.transactionsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -81,8 +78,9 @@
             this.stock_time,
             this.stock_item_price,
             this.dish_name,
-            this.department_name,
             this.kitchen_amount,
+            this.margin,
+            this.fix_price,
             this.kitchen_price,
             this.stockidDataGridViewTextBoxColumn,
             this.kitchenidDataGridViewTextBoxColumn});
@@ -90,95 +88,9 @@
             this.transactionsGrid.Location = new System.Drawing.Point(12, 43);
             this.transactionsGrid.Name = "transactionsGrid";
             this.transactionsGrid.ReadOnly = true;
+            this.transactionsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.transactionsGrid.Size = new System.Drawing.Size(882, 565);
             this.transactionsGrid.TabIndex = 0;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "№";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // transtimeDataGridViewTextBoxColumn
-            // 
-            this.transtimeDataGridViewTextBoxColumn.DataPropertyName = "trans_time";
-            this.transtimeDataGridViewTextBoxColumn.HeaderText = "Дата";
-            this.transtimeDataGridViewTextBoxColumn.Name = "transtimeDataGridViewTextBoxColumn";
-            this.transtimeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // resource_name
-            // 
-            this.resource_name.DataPropertyName = "resource_name";
-            this.resource_name.HeaderText = "Ингридиент";
-            this.resource_name.Name = "resource_name";
-            this.resource_name.ReadOnly = true;
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Количество";
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // stock_time
-            // 
-            this.stock_time.DataPropertyName = "stock_time";
-            this.stock_time.HeaderText = "Дата партии(склад)";
-            this.stock_time.Name = "stock_time";
-            this.stock_time.ReadOnly = true;
-            // 
-            // stock_item_price
-            // 
-            this.stock_item_price.DataPropertyName = "stock_item_price";
-            this.stock_item_price.HeaderText = "Цена единицы(склад)";
-            this.stock_item_price.Name = "stock_item_price";
-            this.stock_item_price.ReadOnly = true;
-            // 
-            // dish_name
-            // 
-            this.dish_name.DataPropertyName = "dish_name";
-            this.dish_name.HeaderText = "Блюдо";
-            this.dish_name.Name = "dish_name";
-            this.dish_name.ReadOnly = true;
-            // 
-            // department_name
-            // 
-            this.department_name.DataPropertyName = "department_name";
-            this.department_name.HeaderText = "Отдел";
-            this.department_name.Name = "department_name";
-            this.department_name.ReadOnly = true;
-            // 
-            // kitchen_amount
-            // 
-            this.kitchen_amount.DataPropertyName = "kitchen_amount";
-            this.kitchen_amount.HeaderText = "Количество(кухня)";
-            this.kitchen_amount.Name = "kitchen_amount";
-            this.kitchen_amount.ReadOnly = true;
-            // 
-            // kitchen_price
-            // 
-            this.kitchen_price.DataPropertyName = "kitchen_price";
-            this.kitchen_price.HeaderText = "Цена единицы(кухня)";
-            this.kitchen_price.Name = "kitchen_price";
-            this.kitchen_price.ReadOnly = true;
-            // 
-            // stockidDataGridViewTextBoxColumn
-            // 
-            this.stockidDataGridViewTextBoxColumn.DataPropertyName = "stock_id";
-            this.stockidDataGridViewTextBoxColumn.HeaderText = "Складской номер";
-            this.stockidDataGridViewTextBoxColumn.Name = "stockidDataGridViewTextBoxColumn";
-            this.stockidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.stockidDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // kitchenidDataGridViewTextBoxColumn
-            // 
-            this.kitchenidDataGridViewTextBoxColumn.DataPropertyName = "kitchen_id";
-            this.kitchenidDataGridViewTextBoxColumn.HeaderText = "Номер поступления на кухню";
-            this.kitchenidDataGridViewTextBoxColumn.Name = "kitchenidDataGridViewTextBoxColumn";
-            this.kitchenidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.kitchenidDataGridViewTextBoxColumn.Visible = false;
             // 
             // stockTransViewBindingSource
             // 
@@ -241,11 +153,11 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(617, 14);
+            this.label3.Location = new System.Drawing.Point(601, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 13);
+            this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Ингридиент";
+            this.label3.Text = "Наименование";
             // 
             // resourseField
             // 
@@ -255,47 +167,15 @@
             this.resourseField.Size = new System.Drawing.Size(204, 20);
             this.resourseField.TabIndex = 5;
             // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(425, 13);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Отдел";
-            // 
-            // departmentField
-            // 
-            this.departmentField.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.departmentField.DataSource = this.departmentsBindingSource;
-            this.departmentField.DisplayMember = "name";
-            this.departmentField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.departmentField.FormattingEnabled = true;
-            this.departmentField.Location = new System.Drawing.Point(469, 10);
-            this.departmentField.Name = "departmentField";
-            this.departmentField.Size = new System.Drawing.Size(121, 21);
-            this.departmentField.TabIndex = 7;
-            this.departmentField.ValueMember = "name";
-            // 
-            // departmentsBindingSource
-            // 
-            this.departmentsBindingSource.DataMember = "departments";
-            this.departmentsBindingSource.DataSource = this.cafeDataSet;
-            // 
-            // departmentsTableAdapter
-            // 
-            this.departmentsTableAdapter.ClearBeforeFill = true;
-            // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(311, 624);
+            this.label5.Location = new System.Drawing.Point(309, 624);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(132, 13);
+            this.label5.Size = new System.Drawing.Size(134, 13);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Сумма списываний, руб.";
+            this.label5.Text = "Сумма поступлений, руб.";
             // 
             // sumField
             // 
@@ -308,6 +188,123 @@
             this.sumField.TabIndex = 9;
             this.sumField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.FillWeight = 50F;
+            this.idDataGridViewTextBoxColumn.HeaderText = "№";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 43;
+            // 
+            // transtimeDataGridViewTextBoxColumn
+            // 
+            this.transtimeDataGridViewTextBoxColumn.DataPropertyName = "trans_time";
+            this.transtimeDataGridViewTextBoxColumn.FillWeight = 82.08122F;
+            this.transtimeDataGridViewTextBoxColumn.HeaderText = "Дата";
+            this.transtimeDataGridViewTextBoxColumn.Name = "transtimeDataGridViewTextBoxColumn";
+            this.transtimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.transtimeDataGridViewTextBoxColumn.Width = 58;
+            // 
+            // resource_name
+            // 
+            this.resource_name.DataPropertyName = "resource_name";
+            this.resource_name.FillWeight = 82.08122F;
+            this.resource_name.HeaderText = "Наименование";
+            this.resource_name.Name = "resource_name";
+            this.resource_name.ReadOnly = true;
+            this.resource_name.Width = 108;
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "amount";
+            this.amountDataGridViewTextBoxColumn.FillWeight = 82.08122F;
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Количество";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
+            this.amountDataGridViewTextBoxColumn.Width = 91;
+            // 
+            // stock_time
+            // 
+            this.stock_time.DataPropertyName = "stock_time";
+            this.stock_time.FillWeight = 82.08122F;
+            this.stock_time.HeaderText = "Дата партии(склад)";
+            this.stock_time.Name = "stock_time";
+            this.stock_time.ReadOnly = true;
+            this.stock_time.Width = 121;
+            // 
+            // stock_item_price
+            // 
+            this.stock_item_price.DataPropertyName = "stock_item_price";
+            this.stock_item_price.FillWeight = 82.08122F;
+            this.stock_item_price.HeaderText = "Цена единицы(склад)";
+            this.stock_item_price.Name = "stock_item_price";
+            this.stock_item_price.ReadOnly = true;
+            this.stock_item_price.Width = 129;
+            // 
+            // dish_name
+            // 
+            this.dish_name.DataPropertyName = "dish_name";
+            this.dish_name.FillWeight = 82.08122F;
+            this.dish_name.HeaderText = "Блюдо";
+            this.dish_name.Name = "dish_name";
+            this.dish_name.ReadOnly = true;
+            this.dish_name.Width = 65;
+            // 
+            // kitchen_amount
+            // 
+            this.kitchen_amount.DataPropertyName = "kitchen_amount";
+            this.kitchen_amount.FillWeight = 82.08122F;
+            this.kitchen_amount.HeaderText = "Количество(кухня)";
+            this.kitchen_amount.Name = "kitchen_amount";
+            this.kitchen_amount.ReadOnly = true;
+            this.kitchen_amount.Width = 125;
+            // 
+            // margin
+            // 
+            this.margin.DataPropertyName = "margin";
+            this.margin.FillWeight = 82.08122F;
+            this.margin.HeaderText = "Наценка, %";
+            this.margin.Name = "margin";
+            this.margin.ReadOnly = true;
+            this.margin.Width = 83;
+            // 
+            // fix_price
+            // 
+            this.fix_price.DataPropertyName = "fix_price";
+            this.fix_price.FillWeight = 82.08122F;
+            this.fix_price.HeaderText = "Фикс. цена, руб.";
+            this.fix_price.Name = "fix_price";
+            this.fix_price.ReadOnly = true;
+            this.fix_price.Width = 89;
+            // 
+            // kitchen_price
+            // 
+            this.kitchen_price.DataPropertyName = "kitchen_price";
+            this.kitchen_price.FillWeight = 82.08122F;
+            this.kitchen_price.HeaderText = "Цена единицы(кухня)";
+            this.kitchen_price.Name = "kitchen_price";
+            this.kitchen_price.ReadOnly = true;
+            this.kitchen_price.Width = 127;
+            // 
+            // stockidDataGridViewTextBoxColumn
+            // 
+            this.stockidDataGridViewTextBoxColumn.DataPropertyName = "stock_id";
+            this.stockidDataGridViewTextBoxColumn.HeaderText = "Складской номер";
+            this.stockidDataGridViewTextBoxColumn.Name = "stockidDataGridViewTextBoxColumn";
+            this.stockidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.stockidDataGridViewTextBoxColumn.Visible = false;
+            this.stockidDataGridViewTextBoxColumn.Width = 112;
+            // 
+            // kitchenidDataGridViewTextBoxColumn
+            // 
+            this.kitchenidDataGridViewTextBoxColumn.DataPropertyName = "kitchen_id";
+            this.kitchenidDataGridViewTextBoxColumn.HeaderText = "Номер поступления на кухню";
+            this.kitchenidDataGridViewTextBoxColumn.Name = "kitchenidDataGridViewTextBoxColumn";
+            this.kitchenidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.kitchenidDataGridViewTextBoxColumn.Visible = false;
+            this.kitchenidDataGridViewTextBoxColumn.Width = 138;
+            // 
             // StockTransForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,8 +312,6 @@
             this.ClientSize = new System.Drawing.Size(906, 649);
             this.Controls.Add(this.sumField);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.departmentField);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.resourseField);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.transEndDate);
@@ -328,12 +323,11 @@
             this.Name = "StockTransForm";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Списывания продукции со склада";
+            this.Text = "Поступления со склада на кухню";
             this.Load += new System.EventHandler(this.StockTransForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.transactionsGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockTransViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cafeDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,6 +340,14 @@
         private System.Windows.Forms.Button closeBtn;
         private System.Windows.Forms.BindingSource stockTransViewBindingSource;
         private cafeDataSetTableAdapters.StockTransViewTableAdapter stockTransViewTableAdapter;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker transStartDate;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker transEndDate;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox resourseField;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox sumField;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn transtimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn resource_name;
@@ -353,22 +355,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn stock_time;
         private System.Windows.Forms.DataGridViewTextBoxColumn stock_item_price;
         private System.Windows.Forms.DataGridViewTextBoxColumn dish_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn department_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn kitchen_amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn margin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fix_price;
         private System.Windows.Forms.DataGridViewTextBoxColumn kitchen_price;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kitchenidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker transStartDate;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker transEndDate;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox resourseField;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox departmentField;
-        private System.Windows.Forms.BindingSource departmentsBindingSource;
-        private cafeDataSetTableAdapters.departmentsTableAdapter departmentsTableAdapter;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox sumField;
     }
 }

@@ -35,7 +35,6 @@
             this.marginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cafeDataSet = new Apriori.cafeDataSet();
-            this.departmentsTableAdapter = new Apriori.cafeDataSetTableAdapters.departmentsTableAdapter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.marginField = new System.Windows.Forms.NumericUpDown();
             this.nameField = new System.Windows.Forms.TextBox();
@@ -99,11 +98,7 @@
             // cafeDataSet
             // 
             this.cafeDataSet.DataSetName = "cafeDataSet";
-            this.cafeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // departmentsTableAdapter
-            // 
-            this.departmentsTableAdapter.ClearBeforeFill = true;
+            this.cafeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;            
             // 
             // groupBox1
             // 
@@ -237,8 +232,7 @@
 
         private System.Windows.Forms.DataGridView departmentsGrid;
         private cafeDataSet cafeDataSet;
-        private System.Windows.Forms.BindingSource departmentsBindingSource;
-        private cafeDataSetTableAdapters.departmentsTableAdapter departmentsTableAdapter;
+        private System.Windows.Forms.BindingSource departmentsBindingSource;        
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn marginDataGridViewTextBoxColumn;

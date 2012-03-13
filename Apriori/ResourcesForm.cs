@@ -14,6 +14,12 @@ namespace Apriori
         {
             InitializeComponent();
             measureFiled.SelectedIndex = 0;
+            resourcesGrid.DataError += new DataGridViewDataErrorEventHandler(resourcesGrid_DataError);
+        }
+
+        void resourcesGrid_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Введено неверное значение", "Ошибка данных!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void ResourcesForm_Load(object sender, EventArgs e)
@@ -43,7 +49,7 @@ namespace Apriori
             }
             try
             {
-                cafeDataSet.resources.AddresourcesRow(nameField.Text, (String)measureFiled.SelectedItem);
+                cafeDataSet.resources.AddresourcesRow(nameField.Text, (String)measureFiled.SelectedItem, (float)seasonMarginField.Value);
                 nameField.Text = "";
             }
             catch

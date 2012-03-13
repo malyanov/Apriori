@@ -17,9 +17,7 @@ namespace Apriori
 
         private void DepartmentsForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'cafeDataSet.departments' table. You can move, or remove it, as needed.
-            this.departmentsTableAdapter.Fill(this.cafeDataSet.departments);
-
+           
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
@@ -37,7 +35,7 @@ namespace Apriori
             }
             try
             {                
-                cafeDataSet.departments.AdddepartmentsRow(nameField.Text, (int)marginField.Value);
+                //cafeDataSet.departments.AdddepartmentsRow(nameField.Text, (int)marginField.Value);
                 nameField.Text="";
                 marginField.Value = 0;
             }
@@ -49,7 +47,7 @@ namespace Apriori
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            departmentsTableAdapter.Update(cafeDataSet.departments);
+            //departmentsTableAdapter.Update(cafeDataSet.departments);
             Close();
         }
 

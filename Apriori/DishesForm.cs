@@ -13,6 +13,12 @@ namespace Apriori
         public DishesForm()
         {
             InitializeComponent();
+            dishesGrid.DataError += new DataGridViewDataErrorEventHandler(dishesGrid_DataError);
+        }
+
+        void dishesGrid_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Введено неверное значение", "Ошибка данных!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void DishesForm_Load(object sender, EventArgs e)

@@ -30,34 +30,34 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dishesGrid = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fix_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.margin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dishesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cafeDataSet = new Apriori.cafeDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.marginField = new System.Windows.Forms.NumericUpDown();
+            this.fixPriceField = new System.Windows.Forms.NumericUpDown();
             this.continueBtn = new System.Windows.Forms.Button();
             this.descriptionField = new System.Windows.Forms.TextBox();
             this.nameField = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.dishesTableAdapter = new Apriori.cafeDataSetTableAdapters.dishesTableAdapter();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
             this.resourcesBtn = new System.Windows.Forms.Button();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fix_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.margin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label3 = new System.Windows.Forms.Label();
-            this.fixPriceField = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.marginField = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dishesGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dishesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cafeDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fixPriceField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marginField)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fixPriceField)).BeginInit();
             this.SuspendLayout();
             // 
             // dishesGrid
@@ -81,6 +81,39 @@
             this.dishesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dishesGrid.Size = new System.Drawing.Size(531, 254);
             this.dishesGrid.TabIndex = 0;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "№";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Навание";
+            this.nameDataGridViewTextBoxColumn.MaxInputLength = 200;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Описание";
+            this.descriptionDataGridViewTextBoxColumn.MaxInputLength = 400;
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            // 
+            // fix_price
+            // 
+            this.fix_price.DataPropertyName = "fix_price";
+            this.fix_price.HeaderText = "Фикс. цена, руб.";
+            this.fix_price.Name = "fix_price";
+            // 
+            // margin
+            // 
+            this.margin.DataPropertyName = "margin";
+            this.margin.HeaderText = "Наценка, %";
+            this.margin.Name = "margin";
             // 
             // dishesBindingSource
             // 
@@ -112,10 +145,44 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Добавление блюда";
             // 
+            // marginField
+            // 
+            this.marginField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.marginField.Location = new System.Drawing.Point(364, 50);
+            this.marginField.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.marginField.Name = "marginField";
+            this.marginField.Size = new System.Drawing.Size(120, 20);
+            this.marginField.TabIndex = 4;
+            this.marginField.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // fixPriceField
+            // 
+            this.fixPriceField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.fixPriceField.DecimalPlaces = 2;
+            this.fixPriceField.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.fixPriceField.Location = new System.Drawing.Point(364, 21);
+            this.fixPriceField.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.fixPriceField.Name = "fixPriceField";
+            this.fixPriceField.Size = new System.Drawing.Size(120, 20);
+            this.fixPriceField.TabIndex = 4;
+            this.fixPriceField.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // continueBtn
             // 
             this.continueBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.continueBtn.Location = new System.Drawing.Point(307, 92);
+            this.continueBtn.Location = new System.Drawing.Point(341, 92);
             this.continueBtn.Name = "continueBtn";
             this.continueBtn.Size = new System.Drawing.Size(85, 23);
             this.continueBtn.TabIndex = 3;
@@ -126,7 +193,7 @@
             // descriptionField
             // 
             this.descriptionField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.descriptionField.Location = new System.Drawing.Point(78, 52);
+            this.descriptionField.Location = new System.Drawing.Point(112, 52);
             this.descriptionField.MaxLength = 400;
             this.descriptionField.Multiline = true;
             this.descriptionField.Name = "descriptionField";
@@ -136,7 +203,7 @@
             // nameField
             // 
             this.nameField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.nameField.Location = new System.Drawing.Point(78, 20);
+            this.nameField.Location = new System.Drawing.Point(112, 20);
             this.nameField.MaxLength = 200;
             this.nameField.Name = "nameField";
             this.nameField.Size = new System.Drawing.Size(143, 20);
@@ -146,17 +213,37 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 52);
+            this.label2.Location = new System.Drawing.Point(49, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Описание";
             // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(266, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Фикс. цена, руб.";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(266, 52);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Наценка, %";
+            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 23);
+            this.label1.Location = new System.Drawing.Point(49, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 0;
@@ -210,91 +297,6 @@
             this.resourcesBtn.UseVisualStyleBackColor = true;
             this.resourcesBtn.Click += new System.EventHandler(this.resourcesBtn_Click);
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "№";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Навание";
-            this.nameDataGridViewTextBoxColumn.MaxInputLength = 200;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Описание";
-            this.descriptionDataGridViewTextBoxColumn.MaxInputLength = 400;
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            // 
-            // fix_price
-            // 
-            this.fix_price.DataPropertyName = "fix_price";
-            this.fix_price.HeaderText = "Фикс. цена, руб.";
-            this.fix_price.Name = "fix_price";
-            // 
-            // margin
-            // 
-            this.margin.DataPropertyName = "margin";
-            this.margin.HeaderText = "Наценка, %";
-            this.margin.Name = "margin";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(232, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Фикс. цена, руб.";
-            // 
-            // fixPriceField
-            // 
-            this.fixPriceField.DecimalPlaces = 2;
-            this.fixPriceField.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.fixPriceField.Location = new System.Drawing.Point(330, 21);
-            this.fixPriceField.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.fixPriceField.Name = "fixPriceField";
-            this.fixPriceField.Size = new System.Drawing.Size(120, 20);
-            this.fixPriceField.TabIndex = 4;
-            this.fixPriceField.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(232, 52);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Наценка, %";
-            // 
-            // marginField
-            // 
-            this.marginField.Location = new System.Drawing.Point(330, 50);
-            this.marginField.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.marginField.Name = "marginField";
-            this.marginField.Size = new System.Drawing.Size(120, 20);
-            this.marginField.TabIndex = 4;
-            this.marginField.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // DishesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,8 +318,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cafeDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fixPriceField)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.marginField)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fixPriceField)).EndInit();
             this.ResumeLayout(false);
 
         }

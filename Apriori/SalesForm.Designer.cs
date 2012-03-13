@@ -31,31 +31,26 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dishDate = new System.Windows.Forms.TextBox();
+            this.kitchenViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cafeDataSet = new Apriori.cafeDataSet();
             this.label6 = new System.Windows.Forms.Label();
             this.amountField = new System.Windows.Forms.NumericUpDown();
-            this.kitchenIncomesViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cafeDataSet = new Apriori.cafeDataSet();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dishField = new System.Windows.Forms.ComboBox();
-            this.departmentField = new System.Windows.Forms.ComboBox();
-            this.departmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.priceField = new System.Windows.Forms.TextBox();
             this.saleBtn = new System.Windows.Forms.Button();
-            this.departmentsTableAdapter = new Apriori.cafeDataSetTableAdapters.departmentsTableAdapter();
-            this.kitchenIncomesViewTableAdapter = new Apriori.cafeDataSetTableAdapters.KitchenIncomesViewTableAdapter();
             this.label5 = new System.Windows.Forms.Label();
             this.sumPriceField = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.salesTableAdapter = new Apriori.cafeDataSetTableAdapters.salesTableAdapter();
             this.kitchenIncomesTableAdapter = new Apriori.cafeDataSetTableAdapters.kitchen_incomesTableAdapter();
+            this.kitchenViewTableAdapter = new Apriori.cafeDataSetTableAdapters.KitchenViewTableAdapter();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.amountField)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kitchenIncomesViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kitchenViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cafeDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.amountField)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +65,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dishField);
-            this.groupBox1.Location = new System.Drawing.Point(12, 39);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(354, 117);
             this.groupBox1.TabIndex = 0;
@@ -79,7 +74,7 @@
             // 
             // dishDate
             // 
-            this.dishDate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kitchenIncomesViewBindingSource, "add_time", true));
+            this.dishDate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kitchenViewBindingSource, "add_time", true));
             this.dishDate.Location = new System.Drawing.Point(106, 82);
             this.dishDate.Name = "dishDate";
             this.dishDate.ReadOnly = true;
@@ -87,10 +82,20 @@
             this.dishDate.TabIndex = 5;
             this.dishDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // kitchenViewBindingSource
+            // 
+            this.kitchenViewBindingSource.DataMember = "KitchenView";
+            this.kitchenViewBindingSource.DataSource = this.cafeDataSet;
+            // 
+            // cafeDataSet
+            // 
+            this.cafeDataSet.DataSetName = "cafeDataSet";
+            this.cafeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(33, 89);
+            this.label6.Location = new System.Drawing.Point(40, 85);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(33, 13);
             this.label6.TabIndex = 4;
@@ -99,7 +104,7 @@
             // amountField
             // 
             this.amountField.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.amountField.DataBindings.Add(new System.Windows.Forms.Binding("Maximum", this.kitchenIncomesViewBindingSource, "current_amount", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
+            this.amountField.DataBindings.Add(new System.Windows.Forms.Binding("Maximum", this.kitchenViewBindingSource, "current_amount", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
             this.amountField.Location = new System.Drawing.Point(210, 57);
             this.amountField.Maximum = new decimal(new int[] {
             1000,
@@ -120,16 +125,6 @@
             0,
             0,
             0});
-            // 
-            // kitchenIncomesViewBindingSource
-            // 
-            this.kitchenIncomesViewBindingSource.DataMember = "KitchenIncomesView";
-            this.kitchenIncomesViewBindingSource.DataSource = this.cafeDataSet;
-            // 
-            // cafeDataSet
-            // 
-            this.cafeDataSet.DataSetName = "cafeDataSet";
-            this.cafeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label3
             // 
@@ -154,7 +149,7 @@
             // dishField
             // 
             this.dishField.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dishField.DataSource = this.kitchenIncomesViewBindingSource;
+            this.dishField.DataSource = this.kitchenViewBindingSource;
             this.dishField.DisplayMember = "dish_name";
             this.dishField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dishField.FormattingEnabled = true;
@@ -164,38 +159,10 @@
             this.dishField.TabIndex = 1;
             this.dishField.ValueMember = "id";
             // 
-            // departmentField
-            // 
-            this.departmentField.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.departmentField.DataSource = this.departmentsBindingSource;
-            this.departmentField.DisplayMember = "name";
-            this.departmentField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.departmentField.FormattingEnabled = true;
-            this.departmentField.Location = new System.Drawing.Point(145, 12);
-            this.departmentField.Name = "departmentField";
-            this.departmentField.Size = new System.Drawing.Size(144, 21);
-            this.departmentField.TabIndex = 1;
-            this.departmentField.ValueMember = "id";
-            // 
-            // departmentsBindingSource
-            // 
-            this.departmentsBindingSource.DataMember = "departments";
-            this.departmentsBindingSource.DataSource = this.cafeDataSet;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(101, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Отдел";
-            // 
             // priceField
             // 
             this.priceField.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.priceField.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kitchenIncomesViewBindingSource, "item_price", true));
+            this.priceField.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kitchenViewBindingSource, "fix_price", true));
             this.priceField.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.priceField.Location = new System.Drawing.Point(78, 24);
             this.priceField.Name = "priceField";
@@ -207,21 +174,13 @@
             // 
             this.saleBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.saleBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.saleBtn.Location = new System.Drawing.Point(104, 240);
+            this.saleBtn.Location = new System.Drawing.Point(107, 215);
             this.saleBtn.Name = "saleBtn";
             this.saleBtn.Size = new System.Drawing.Size(163, 35);
             this.saleBtn.TabIndex = 5;
             this.saleBtn.Text = "Продать";
             this.saleBtn.UseVisualStyleBackColor = true;
             this.saleBtn.Click += new System.EventHandler(this.saleBtn_Click);
-            // 
-            // departmentsTableAdapter
-            // 
-            this.departmentsTableAdapter.ClearBeforeFill = true;
-            // 
-            // kitchenIncomesViewTableAdapter
-            // 
-            this.kitchenIncomesViewTableAdapter.ClearBeforeFill = true;
             // 
             // label5
             // 
@@ -247,7 +206,7 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.sumPriceField);
-            this.groupBox2.Location = new System.Drawing.Point(12, 162);
+            this.groupBox2.Location = new System.Drawing.Point(12, 135);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(354, 62);
             this.groupBox2.TabIndex = 8;
@@ -271,15 +230,17 @@
             // 
             this.kitchenIncomesTableAdapter.ClearBeforeFill = true;
             // 
+            // kitchenViewTableAdapter
+            // 
+            this.kitchenViewTableAdapter.ClearBeforeFill = true;
+            // 
             // SalesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 287);
+            this.ClientSize = new System.Drawing.Size(378, 262);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.saleBtn);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.departmentField);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -290,14 +251,12 @@
             this.Load += new System.EventHandler(this.SalesForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.amountField)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kitchenIncomesViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kitchenViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cafeDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.amountField)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -308,15 +267,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox dishField;
-        private System.Windows.Forms.ComboBox departmentField;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox priceField;
         private System.Windows.Forms.Button saleBtn;
         private cafeDataSet cafeDataSet;
-        private System.Windows.Forms.BindingSource departmentsBindingSource;
-        private cafeDataSetTableAdapters.departmentsTableAdapter departmentsTableAdapter;
-        private System.Windows.Forms.BindingSource kitchenIncomesViewBindingSource;
-        private cafeDataSetTableAdapters.KitchenIncomesViewTableAdapter kitchenIncomesViewTableAdapter;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox sumPriceField;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -325,5 +278,7 @@
         private cafeDataSetTableAdapters.kitchen_incomesTableAdapter kitchenIncomesTableAdapter;
         private System.Windows.Forms.TextBox dishDate;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.BindingSource kitchenViewBindingSource;
+        private cafeDataSetTableAdapters.KitchenViewTableAdapter kitchenViewTableAdapter;
     }
 }

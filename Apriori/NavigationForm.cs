@@ -15,7 +15,7 @@ namespace Apriori
             InitializeComponent();            
         }
 
-        private void measuresBtn_Click(object sender, EventArgs e)
+        private void processesBtn_Click(object sender, EventArgs e)
         {
             (new ProcessesForm()).ShowDialog(this);
         }
@@ -23,11 +23,6 @@ namespace Apriori
         private void resourcesBtn_Click(object sender, EventArgs e)
         {
             (new ResourcesForm()).ShowDialog(this);
-        }
-
-        private void departmentsBtn_Click(object sender, EventArgs e)
-        {
-            (new UnderConstructionForm()).ShowDialog(this);
         }
 
         private void dishesBtn_Click(object sender, EventArgs e)

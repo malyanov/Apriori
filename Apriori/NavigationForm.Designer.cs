@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.measuresBtn = new System.Windows.Forms.Button();
+            this.processesBtn = new System.Windows.Forms.Button();
             this.resourcesBtn = new System.Windows.Forms.Button();
-            this.departmentsBtn = new System.Windows.Forms.Button();
             this.dishesBtn = new System.Windows.Forms.Button();
             this.stockBtn = new System.Windows.Forms.Button();
             this.stockTransactionsBtn = new System.Windows.Forms.Button();
@@ -38,29 +37,33 @@
             this.saleBtn = new System.Windows.Forms.Button();
             this.salesHistoryBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.stockWriteoffsBtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.kitchenViewBtn = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kitchenViewBtn = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.kitchenWriteoffsBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // measuresBtn
+            // processesBtn
             // 
-            this.measuresBtn.Location = new System.Drawing.Point(213, 58);
-            this.measuresBtn.Name = "measuresBtn";
-            this.measuresBtn.Size = new System.Drawing.Size(177, 33);
-            this.measuresBtn.TabIndex = 0;
-            this.measuresBtn.Text = "Единицы измерения";
-            this.measuresBtn.UseVisualStyleBackColor = true;
-            this.measuresBtn.Click += new System.EventHandler(this.measuresBtn_Click);
+            this.processesBtn.Location = new System.Drawing.Point(6, 19);
+            this.processesBtn.Name = "processesBtn";
+            this.processesBtn.Size = new System.Drawing.Size(177, 33);
+            this.processesBtn.TabIndex = 0;
+            this.processesBtn.Text = "Процессы";
+            this.processesBtn.UseVisualStyleBackColor = true;
+            this.processesBtn.Click += new System.EventHandler(this.processesBtn_Click);
             // 
             // resourcesBtn
             // 
@@ -72,19 +75,9 @@
             this.resourcesBtn.UseVisualStyleBackColor = true;
             this.resourcesBtn.Click += new System.EventHandler(this.resourcesBtn_Click);
             // 
-            // departmentsBtn
-            // 
-            this.departmentsBtn.Location = new System.Drawing.Point(213, 19);
-            this.departmentsBtn.Name = "departmentsBtn";
-            this.departmentsBtn.Size = new System.Drawing.Size(177, 33);
-            this.departmentsBtn.TabIndex = 2;
-            this.departmentsBtn.Text = "Отделы";
-            this.departmentsBtn.UseVisualStyleBackColor = true;
-            this.departmentsBtn.Click += new System.EventHandler(this.departmentsBtn_Click);
-            // 
             // dishesBtn
             // 
-            this.dishesBtn.Location = new System.Drawing.Point(213, 58);
+            this.dishesBtn.Location = new System.Drawing.Point(212, 19);
             this.dishesBtn.Name = "dishesBtn";
             this.dishesBtn.Size = new System.Drawing.Size(177, 33);
             this.dishesBtn.TabIndex = 3;
@@ -108,7 +101,7 @@
             this.stockTransactionsBtn.Name = "stockTransactionsBtn";
             this.stockTransactionsBtn.Size = new System.Drawing.Size(177, 33);
             this.stockTransactionsBtn.TabIndex = 5;
-            this.stockTransactionsBtn.Text = "Списывания со склада";
+            this.stockTransactionsBtn.Text = "Поступления на кухню";
             this.stockTransactionsBtn.UseVisualStyleBackColor = true;
             this.stockTransactionsBtn.Click += new System.EventHandler(this.stockTransactionsBtn_Click);
             // 
@@ -144,9 +137,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.stockWriteoffsBtn);
             this.groupBox1.Controls.Add(this.stockBtn);
             this.groupBox1.Controls.Add(this.stockTransactionsBtn);
-            this.groupBox1.Controls.Add(this.measuresBtn);
             this.groupBox1.Controls.Add(this.resourcesBtn);
             this.groupBox1.Location = new System.Drawing.Point(12, 27);
             this.groupBox1.Name = "groupBox1";
@@ -155,11 +148,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Управление складом";
             // 
+            // stockWriteoffsBtn
+            // 
+            this.stockWriteoffsBtn.Location = new System.Drawing.Point(213, 58);
+            this.stockWriteoffsBtn.Name = "stockWriteoffsBtn";
+            this.stockWriteoffsBtn.Size = new System.Drawing.Size(176, 33);
+            this.stockWriteoffsBtn.TabIndex = 6;
+            this.stockWriteoffsBtn.Text = "Списания";
+            this.stockWriteoffsBtn.UseVisualStyleBackColor = true;
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.kitchenWriteoffsBtn);
             this.groupBox2.Controls.Add(this.kitchenViewBtn);
             this.groupBox2.Controls.Add(this.kitchenBtn);
-            this.groupBox2.Controls.Add(this.departmentsBtn);
             this.groupBox2.Controls.Add(this.dishesBtn);
             this.groupBox2.Location = new System.Drawing.Point(12, 141);
             this.groupBox2.Name = "groupBox2";
@@ -167,6 +169,16 @@
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Управление кухней";
+            // 
+            // kitchenViewBtn
+            // 
+            this.kitchenViewBtn.Location = new System.Drawing.Point(6, 58);
+            this.kitchenViewBtn.Name = "kitchenViewBtn";
+            this.kitchenViewBtn.Size = new System.Drawing.Size(176, 33);
+            this.kitchenViewBtn.TabIndex = 7;
+            this.kitchenViewBtn.Text = "Кухня";
+            this.kitchenViewBtn.UseVisualStyleBackColor = true;
+            this.kitchenViewBtn.Click += new System.EventHandler(this.kitchenViewBtn_Click);
             // 
             // groupBox3
             // 
@@ -220,21 +232,31 @@
             this.aboutToolStripMenuItem.Text = "Автор";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // kitchenViewBtn
+            // groupBox4
             // 
-            this.kitchenViewBtn.Location = new System.Drawing.Point(6, 58);
-            this.kitchenViewBtn.Name = "kitchenViewBtn";
-            this.kitchenViewBtn.Size = new System.Drawing.Size(176, 33);
-            this.kitchenViewBtn.TabIndex = 7;
-            this.kitchenViewBtn.Text = "Кухня";
-            this.kitchenViewBtn.UseVisualStyleBackColor = true;
-            this.kitchenViewBtn.Click += new System.EventHandler(this.kitchenViewBtn_Click);
+            this.groupBox4.Controls.Add(this.processesBtn);
+            this.groupBox4.Location = new System.Drawing.Point(12, 321);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(398, 68);
+            this.groupBox4.TabIndex = 11;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Технологические карты";
+            // 
+            // kitchenWriteoffsBtn
+            // 
+            this.kitchenWriteoffsBtn.Location = new System.Drawing.Point(213, 58);
+            this.kitchenWriteoffsBtn.Name = "kitchenWriteoffsBtn";
+            this.kitchenWriteoffsBtn.Size = new System.Drawing.Size(176, 33);
+            this.kitchenWriteoffsBtn.TabIndex = 8;
+            this.kitchenWriteoffsBtn.Text = "Списания";
+            this.kitchenWriteoffsBtn.UseVisualStyleBackColor = true;
             // 
             // NavigationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(421, 326);
+            this.ClientSize = new System.Drawing.Size(421, 405);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -250,6 +272,7 @@
             this.groupBox3.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,9 +280,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button measuresBtn;
+        private System.Windows.Forms.Button processesBtn;
         private System.Windows.Forms.Button resourcesBtn;
-        private System.Windows.Forms.Button departmentsBtn;
         private System.Windows.Forms.Button dishesBtn;
         private System.Windows.Forms.Button stockBtn;
         private System.Windows.Forms.Button stockTransactionsBtn;
@@ -275,5 +297,8 @@
         private System.Windows.Forms.ToolStripMenuItem оПрограммаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Button kitchenViewBtn;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button stockWriteoffsBtn;
+        private System.Windows.Forms.Button kitchenWriteoffsBtn;
     }
 }

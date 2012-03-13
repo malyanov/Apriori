@@ -10,11 +10,18 @@ namespace Apriori
 {
     public partial class WriteOffForm : Form
     {       
-        private bool canceled=false;
+        private bool canceled=true;
         public WriteOffForm(float max)
         {
             InitializeComponent();
             amountField.Maximum=amountField.Value=(decimal)max;            
+        }
+        public WriteOffForm(int max)
+        {
+            InitializeComponent();
+            amountField.Maximum = amountField.Value = (decimal)max;
+            amountField.DecimalPlaces = 0;
+            amountField.Increment = 1;
         }
         public float getAmount()
         {
@@ -32,12 +39,12 @@ namespace Apriori
                 MessageBox.Show("Заполните все поля!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            canceled = false;
             Close();
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-            canceled = true;
             Close();
         }
         public bool isCanceled()

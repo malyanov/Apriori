@@ -13,14 +13,11 @@ namespace Apriori
         private DataTable resultTable;
         public KitchenOrderForm()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void KitchenForm_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'cafeDataSet.departments' table. You can move, or remove it, as needed.
-            this.departmentsTableAdapter.Fill(this.cafeDataSet.departments);
-            // TODO: This line of code loads data into the 'cafeDataSet.dishes' table. You can move, or remove it, as needed.
+        {            
             this.dishesTableAdapter.Fill(this.cafeDataSet.dishes);            
             this.dishesResourcesTableAdapter.Fill(this.cafeDataSet.dishes_resources);            
             this.stockIncomesTableAdapter.Fill(this.cafeDataSet.stock_incomes);
@@ -30,13 +27,13 @@ namespace Apriori
         private void calculateBtn_Click(object sender, EventArgs e)
         {            
             DataTable resourcesTable = dishesResourcesTableAdapter.GetDataByDishID((int)dishField.SelectedValue);
-            int multiplaier = (int)amountField.Value, resourceId;
+            int multiplier = (int)amountField.Value, resourceId;
             float amount;
             resultTable = null;
             //check
             for(int i=0;i<resourcesTable.Rows.Count;i++)
             {
-                amount=(float)resourcesTable.Rows[i]["amount"]*multiplaier;
+                amount=(float)resourcesTable.Rows[i]["amount"]*multiplier;
                 resourceId = (int)resourcesTable.Rows[i]["resource_id"];
                 if (stockIncomesTableAdapter.getResourceAmount(resourceId) < amount)
                 {
@@ -49,9 +46,9 @@ namespace Apriori
             float totalPrice = 0;
             for (int i = 0; i < resourcesTable.Rows.Count; i++)
             {
-                amount = (float)resourcesTable.Rows[i]["amount"] * multiplaier;
+                amount = (float)resourcesTable.Rows[i]["amount"] * multiplier;
                 resourceId = (int)resourcesTable.Rows[i]["resource_id"];
-                DataTable stockItems = stockIncomesTableAdapter.GetStcokItemsByResID(resourceId);
+                DataTable stockItems = stockIncomesTableAdapter.GetStockItemsByResID(resourceId);
                 if (resultTable == null)
                 {
                     resultTable = stockItems.Clone();
@@ -67,30 +64,31 @@ namespace Apriori
                     if (amount <= sum + a)
                     {
                         row["current_amount"] = amount - sum;
-                        totalPrice += ((float)row["current_amount"] * (float)row["item_price"]);
+                        totalPrice += ((float)row["current_amount"] * ((float)row["item_price"] + (float)row["season_margin"]));
                         resultTable.ImportRow(row);
                         break;
                     }
                     else
                     {
                         sum += a;
-                        totalPrice += ((float)row["current_amount"] * (float)row["item_price"]);
+                        totalPrice += ((float)row["current_amount"] * ((float)row["item_price"] + (float)row["season_margin"]));
                         resultTable.ImportRow(row);
                     }
                     j++;
                 }
                 
             }
-            double marg = int.Parse(marginField.Text) / 100.0;
+            double marg = int.Parse(marginField.Text) / 100.0+1;
             sumCostField.Text = Math.Round(totalPrice, 2).ToString();
             sumCostMargField.Text = Math.Round(totalPrice * marg, 2).ToString();
-            costField.Text = Math.Round(totalPrice / multiplaier, 2).ToString();
-            margCostField.Text = Math.Round(totalPrice / multiplaier * marg, 2).ToString();
+            costField.Text = Math.Round(totalPrice / multiplier, 2).ToString();
+            margCostField.Text = Math.Round(totalPrice / multiplier * marg, 2).ToString();
             
             resultTable.Columns["current_amount"].ColumnName = "Количество";
             resultTable.Columns["add_time"].ColumnName = "Дата партии на складе";
             resultTable.Columns["name"].ColumnName = "Ингридиент";
             resultTable.Columns["item_price"].ColumnName = "Цена единицы, руб.";
+            resultTable.Columns["season_margin"].ColumnName = "Сезонная наценка, руб.";
             resultTable.Columns["id"].ColumnName = "№";
             kitchenGrid.DataSource = resultTable;
             confirmBtn.Enabled = true;
@@ -98,15 +96,18 @@ namespace Apriori
 
         private void confirmBtn_Click(object sender, EventArgs e)
         {
+            //debug add variables form
+            double diff=double.Parse(margCostField.Text) - double.Parse(fixPriceField.Text);
+            if (diff > 1&&MessageBox.Show("Превышен лимит разницы с реальной ценой. Убыток c 1 единицы: " + diff + " руб.", "Предупреждение!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)            
+                    return;
             DataRow row;
-            cafeDataSet.stock_transactionsRow transRow;            
+            cafeDataSet.stock_transactionsRow transRow;
             int id, lastId;
             float amount;
 
-            cafeDataSet.kitchen_incomesRow kitchenRow = cafeDataSet.kitchen_incomes.Newkitchen_incomesRow();
-            kitchenRow.current_amount = (int)amountField.Value;            
+            cafeDataSet.kitchen_incomesRow kitchenRow = cafeDataSet.kitchen_incomes.Newkitchen_incomesRow();            
             kitchenRow.dish_id = (int)dishField.SelectedValue;
-            kitchenRow.income_amount = kitchenRow.income_amount = (int)amountField.Value;
+            kitchenRow.income_amount = kitchenRow.current_amount = (int)amountField.Value;
             kitchenRow.item_price = (float)float.Parse(margCostField.Text);
             kitchenRow.add_time = DateTime.Now;
             cafeDataSet.kitchen_incomes.Addkitchen_incomesRow(kitchenRow);
@@ -116,7 +117,7 @@ namespace Apriori
             for (int i = 0; i < resultTable.Rows.Count; i++)
             {
                 row = resultTable.Rows[i];
-                id=(int)row["№"];
+                id = (int)row["№"];
                 amount = (float)row["Количество"];
 
                 stockIncomesTableAdapter.writeOffResources(amount, id);
@@ -130,7 +131,7 @@ namespace Apriori
                 stockTransactionsTableAdapter.Update(cafeDataSet.stock_transactions);
             }
             reset();
-            confirmBtn.Enabled = false;
+            confirmBtn.Enabled = false;            
         }
 
         private void closeBtn_Click(object sender, EventArgs e)
