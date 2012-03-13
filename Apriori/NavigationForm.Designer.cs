@@ -39,6 +39,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.stockWriteoffsBtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.kitchenWriteoffsBtn = new System.Windows.Forms.Button();
             this.kitchenViewBtn = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -47,7 +48,6 @@
             this.оПрограммаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.kitchenWriteoffsBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -156,6 +156,7 @@
             this.stockWriteoffsBtn.TabIndex = 6;
             this.stockWriteoffsBtn.Text = "Списания";
             this.stockWriteoffsBtn.UseVisualStyleBackColor = true;
+            this.stockWriteoffsBtn.Click += new System.EventHandler(this.stockWriteoffsBtn_Click);
             // 
             // groupBox2
             // 
@@ -169,6 +170,16 @@
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Управление кухней";
+            // 
+            // kitchenWriteoffsBtn
+            // 
+            this.kitchenWriteoffsBtn.Location = new System.Drawing.Point(213, 58);
+            this.kitchenWriteoffsBtn.Name = "kitchenWriteoffsBtn";
+            this.kitchenWriteoffsBtn.Size = new System.Drawing.Size(176, 33);
+            this.kitchenWriteoffsBtn.TabIndex = 8;
+            this.kitchenWriteoffsBtn.Text = "Списания";
+            this.kitchenWriteoffsBtn.UseVisualStyleBackColor = true;
+            this.kitchenWriteoffsBtn.Click += new System.EventHandler(this.kitchenWriteoffsBtn_Click);
             // 
             // kitchenViewBtn
             // 
@@ -241,15 +252,6 @@
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Технологические карты";
-            // 
-            // kitchenWriteoffsBtn
-            // 
-            this.kitchenWriteoffsBtn.Location = new System.Drawing.Point(213, 58);
-            this.kitchenWriteoffsBtn.Name = "kitchenWriteoffsBtn";
-            this.kitchenWriteoffsBtn.Size = new System.Drawing.Size(176, 33);
-            this.kitchenWriteoffsBtn.TabIndex = 8;
-            this.kitchenWriteoffsBtn.Text = "Списания";
-            this.kitchenWriteoffsBtn.UseVisualStyleBackColor = true;
             // 
             // NavigationForm
             // 

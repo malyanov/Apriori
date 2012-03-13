@@ -53,6 +53,24 @@
     <Compile Include="AddIngrForm.Designer.cs">
       <DependentUpon>AddIngrForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ResProcessesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResProcessesForm.Designer.cs">
+      <DependentUpon>ResProcessesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KitchenWriteoffsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KitchenWriteoffsForm.Designer.cs">
+      <DependentUpon>KitchenWriteoffsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockWriteoffsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockWriteoffsForm.Designer.cs">
+      <DependentUpon>StockWriteoffsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WriteOffForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,12 +91,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>cafeDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="UnderConstructionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UnderConstructionForm.Designer.cs">
-      <DependentUpon>UnderConstructionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DishesForm.cs">
       <SubType>Form</SubType>
@@ -148,14 +160,20 @@
     <EmbeddedResource Include="AddIngrForm.resx">
       <DependentUpon>AddIngrForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ResProcessesForm.resx">
+      <DependentUpon>ResProcessesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KitchenWriteoffsForm.resx">
+      <DependentUpon>KitchenWriteoffsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockWriteoffsForm.resx">
+      <DependentUpon>StockWriteoffsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WriteOffForm.resx">
       <DependentUpon>WriteOffForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AuthForm.resx">
       <DependentUpon>AuthForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UnderConstructionForm.resx">
-      <DependentUpon>UnderConstructionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DishesForm.resx">
       <DependentUpon>DishesForm.cs</DependentUpon>

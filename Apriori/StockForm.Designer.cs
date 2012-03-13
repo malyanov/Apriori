@@ -121,20 +121,10 @@
             0,
             0,
             0});
-            this.priceField.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
             this.priceField.Name = "priceField";
             this.priceField.Size = new System.Drawing.Size(192, 20);
             this.priceField.TabIndex = 2;
             this.priceField.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.priceField.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
             // 
             // amountField
             // 
@@ -146,20 +136,10 @@
             0,
             0,
             0});
-            this.amountField.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
             this.amountField.Name = "amountField";
             this.amountField.Size = new System.Drawing.Size(192, 20);
             this.amountField.TabIndex = 2;
             this.amountField.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.amountField.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
             // 
             // resourceField
             // 

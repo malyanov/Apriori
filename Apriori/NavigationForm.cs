@@ -69,5 +69,15 @@ namespace Apriori
         {
             (new KitchenForm()).ShowDialog(this);
         }
+
+        private void stockWriteoffsBtn_Click(object sender, EventArgs e)
+        {
+            (new StockWriteoffsForm()).ShowDialog(this);
+        }
+
+        private void kitchenWriteoffsBtn_Click(object sender, EventArgs e)
+        {
+            (new KitchenWriteoffsForm()).ShowDialog(this);
+        }
     }
 }

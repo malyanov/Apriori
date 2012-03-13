@@ -37,6 +37,10 @@ namespace Apriori
         private void KitchenIncomesForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'cafeDataSet.KitchenView' table. You can move, or remove it, as needed.
+            this.kitchenViewTableAdapter.Fill(this.cafeDataSet.KitchenView);
+            // TODO: This line of code loads data into the 'cafeDataSet.KitchenView' table. You can move, or remove it, as needed.
+            this.kitchenViewTableAdapter.Fill(this.cafeDataSet.KitchenView);
+            // TODO: This line of code loads data into the 'cafeDataSet.KitchenView' table. You can move, or remove it, as needed.
             this.kitchenViewTableAdapter.Fill(this.cafeDataSet.KitchenView);            
             endDateField.Value = DateTime.Now;
             startDateField.Value = DateTime.Now.AddDays(-30);            
@@ -45,22 +49,16 @@ namespace Apriori
         }
         private void updateSum()
         {
-            float realSum = 0, fixSum=0, diffSum=0;
-            int index = 7 - haveField.SelectedIndex;
-            foreach (DataGridViewRow row in kitchenGridView.Rows)
-            {
+            float realSum = 0;
+            int index = 5 - haveField.SelectedIndex;
+            foreach (DataGridViewRow row in kitchenGridView.Rows)            
                 realSum += ((float)row.Cells[3].Value * (int)row.Cells[index].Value);
-                fixSum += ((float)row.Cells[4].Value * (int)row.Cells[index].Value);
-                diffSum += (float)row.Cells[5].Value;
-            }
-            fixSumField.Text = String.Format("{0:##.##}", fixSum);
-            diffField.Text = String.Format("{0:##.##}", diffSum);
-            realSumField.Text = String.Format("{0:##.##}", realSum);
+            realSumField.Text = String.Format("{0:0.00}", realSum);
         }
 
         private void writeOffBtn_Click(object sender, EventArgs e)
         {
-            form = new WriteOffForm((int)kitchenGridView.SelectedRows[0].Cells[8].Value);
+            form = new WriteOffForm((int)kitchenGridView.SelectedRows[0].Cells[5].Value);
             form.FormClosing += new FormClosingEventHandler(form_FormClosing);
             form.ShowDialog(this);
         }
@@ -70,7 +68,7 @@ namespace Apriori
             if (!form.isCanceled())
             {
                 int amount = (int)form.getAmount();
-                int id = (int)kitchenGridView.SelectedRows[0].Cells[0].Value;
+                int id = (int)kitchenGridView.SelectedRows[0].Cells[0].Value;                
                 int result = kitchenIncomesTableAdapter.writeOffDishes(amount, id);
                 if (result > 0)
                 {

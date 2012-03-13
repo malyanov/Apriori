@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.salesGridView = new System.Windows.Forms.DataGridView();
             this.cafeDataSet = new Apriori.cafeDataSet();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,8 +40,22 @@
             this.closeBtn = new System.Windows.Forms.Button();
             this.sumField = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.salesViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.salesViewTableAdapter = new Apriori.cafeDataSetTableAdapters.SalesViewTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saletimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dishnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salepriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itempriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diffpriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.realSumField = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.diffField = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.salesGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cafeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesViewBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // salesGridView
@@ -50,10 +65,22 @@
             this.salesGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.salesGridView.AutoGenerateColumns = false;
+            this.salesGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.salesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.salesGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.saletimeDataGridViewTextBoxColumn,
+            this.dishnameDataGridViewTextBoxColumn,
+            this.amountDataGridViewTextBoxColumn,
+            this.salepriceDataGridViewTextBoxColumn,
+            this.itempriceDataGridViewTextBoxColumn,
+            this.diffpriceDataGridViewTextBoxColumn});
+            this.salesGridView.DataSource = this.salesViewBindingSource;
             this.salesGridView.Location = new System.Drawing.Point(12, 38);
             this.salesGridView.Name = "salesGridView";
             this.salesGridView.ReadOnly = true;
+            this.salesGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.salesGridView.Size = new System.Drawing.Size(867, 455);
             this.salesGridView.TabIndex = 0;
             // 
@@ -124,31 +151,135 @@
             // 
             // sumField
             // 
-            this.sumField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.sumField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.sumField.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sumField.Location = new System.Drawing.Point(432, 502);
+            this.sumField.Location = new System.Drawing.Point(127, 497);
             this.sumField.Name = "sumField";
             this.sumField.ReadOnly = true;
-            this.sumField.Size = new System.Drawing.Size(136, 26);
+            this.sumField.Size = new System.Drawing.Size(90, 26);
             this.sumField.TabIndex = 7;
             this.sumField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(318, 509);
+            this.label5.Location = new System.Drawing.Point(13, 504);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(108, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Сумма продаж, руб.";
+            // 
+            // salesViewBindingSource
+            // 
+            this.salesViewBindingSource.DataMember = "SalesView";
+            this.salesViewBindingSource.DataSource = this.cafeDataSet;
+            // 
+            // salesViewTableAdapter
+            // 
+            this.salesViewTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "№";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // saletimeDataGridViewTextBoxColumn
+            // 
+            this.saletimeDataGridViewTextBoxColumn.DataPropertyName = "sale_time";
+            this.saletimeDataGridViewTextBoxColumn.HeaderText = "Дата";
+            this.saletimeDataGridViewTextBoxColumn.Name = "saletimeDataGridViewTextBoxColumn";
+            this.saletimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dishnameDataGridViewTextBoxColumn
+            // 
+            this.dishnameDataGridViewTextBoxColumn.DataPropertyName = "dish_name";
+            this.dishnameDataGridViewTextBoxColumn.HeaderText = "Блюдо";
+            this.dishnameDataGridViewTextBoxColumn.Name = "dishnameDataGridViewTextBoxColumn";
+            this.dishnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Количество";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // salepriceDataGridViewTextBoxColumn
+            // 
+            this.salepriceDataGridViewTextBoxColumn.DataPropertyName = "sale_price";
+            this.salepriceDataGridViewTextBoxColumn.HeaderText = "Цена продажи, руб.";
+            this.salepriceDataGridViewTextBoxColumn.Name = "salepriceDataGridViewTextBoxColumn";
+            this.salepriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // itempriceDataGridViewTextBoxColumn
+            // 
+            this.itempriceDataGridViewTextBoxColumn.DataPropertyName = "item_price";
+            this.itempriceDataGridViewTextBoxColumn.HeaderText = "Расч. цена, руб.";
+            this.itempriceDataGridViewTextBoxColumn.Name = "itempriceDataGridViewTextBoxColumn";
+            this.itempriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // diffpriceDataGridViewTextBoxColumn
+            // 
+            this.diffpriceDataGridViewTextBoxColumn.DataPropertyName = "diff_price";
+            this.diffpriceDataGridViewTextBoxColumn.HeaderText = "Разница, руб.";
+            this.diffpriceDataGridViewTextBoxColumn.Name = "diffpriceDataGridViewTextBoxColumn";
+            this.diffpriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // realSumField
+            // 
+            this.realSumField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.realSumField.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.realSumField.Location = new System.Drawing.Point(437, 497);
+            this.realSumField.Name = "realSumField";
+            this.realSumField.ReadOnly = true;
+            this.realSumField.Size = new System.Drawing.Size(90, 26);
+            this.realSumField.TabIndex = 7;
+            this.realSumField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(294, 504);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(137, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Расч. сумма продаж, руб.";
+            // 
+            // diffField
+            // 
+            this.diffField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.diffField.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.diffField.Location = new System.Drawing.Point(679, 497);
+            this.diffField.Name = "diffField";
+            this.diffField.ReadOnly = true;
+            this.diffField.Size = new System.Drawing.Size(90, 26);
+            this.diffField.TabIndex = 7;
+            this.diffField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(597, 504);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Разница, руб.";
             // 
             // ViewSalesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 534);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.diffField);
+            this.Controls.Add(this.realSumField);
             this.Controls.Add(this.sumField);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.dishField);
@@ -165,6 +296,7 @@
             this.Load += new System.EventHandler(this.ViewSalesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.salesGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cafeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesViewBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,5 +315,18 @@
         private System.Windows.Forms.Button closeBtn;        
         private System.Windows.Forms.TextBox sumField;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.BindingSource salesViewBindingSource;
+        private cafeDataSetTableAdapters.SalesViewTableAdapter salesViewTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn saletimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dishnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salepriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itempriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn diffpriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox realSumField;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox diffField;
+        private System.Windows.Forms.Label label6;
     }
 }

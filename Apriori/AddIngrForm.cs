@@ -59,6 +59,14 @@ namespace Apriori
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            float percents = 0;
+            foreach (DataGridViewRow row in dishResourcesGrid.Rows)
+                percents += (float)row.Cells["part"].Value;
+            if(percents!=100.0)
+            {
+                MessageBox.Show("Введены неверные процентные части блюда! Сумма процентов не равна 100.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             dishes_resourcesTableAdapter.Update(cafeDataSet.dishes_resources);
             Close();
         }
@@ -66,6 +74,11 @@ namespace Apriori
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void processingBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -30,18 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.transactionsGrid = new System.Windows.Forms.DataGridView();
-            this.stockTransViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cafeDataSet = new Apriori.cafeDataSet();
-            this.closeBtn = new System.Windows.Forms.Button();
-            this.stockTransViewTableAdapter = new Apriori.cafeDataSetTableAdapters.StockTransViewTableAdapter();
-            this.label1 = new System.Windows.Forms.Label();
-            this.transStartDate = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.transEndDate = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.resourseField = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.sumField = new System.Windows.Forms.TextBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.transtimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.resource_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +43,18 @@
             this.kitchen_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kitchenidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockTransViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cafeDataSet = new Apriori.cafeDataSet();
+            this.closeBtn = new System.Windows.Forms.Button();
+            this.stockTransViewTableAdapter = new Apriori.cafeDataSetTableAdapters.StockTransViewTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
+            this.transStartDate = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.transEndDate = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.resourseField = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.sumField = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.transactionsGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockTransViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cafeDataSet)).BeginInit();
@@ -68,8 +68,6 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.transactionsGrid.AutoGenerateColumns = false;
-            this.transactionsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.transactionsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.transactionsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.transtimeDataGridViewTextBoxColumn,
@@ -91,102 +89,6 @@
             this.transactionsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.transactionsGrid.Size = new System.Drawing.Size(882, 565);
             this.transactionsGrid.TabIndex = 0;
-            // 
-            // stockTransViewBindingSource
-            // 
-            this.stockTransViewBindingSource.DataMember = "StockTransView";
-            this.stockTransViewBindingSource.DataSource = this.cafeDataSet;
-            // 
-            // cafeDataSet
-            // 
-            this.cafeDataSet.DataSetName = "cafeDataSet";
-            this.cafeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // closeBtn
-            // 
-            this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeBtn.Location = new System.Drawing.Point(819, 614);
-            this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(75, 23);
-            this.closeBtn.TabIndex = 1;
-            this.closeBtn.Text = "Закрыть";
-            this.closeBtn.UseVisualStyleBackColor = true;
-            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
-            // 
-            // stockTransViewTableAdapter
-            // 
-            this.stockTransViewTableAdapter.ClearBeforeFill = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Списание с";
-            // 
-            // transStartDate
-            // 
-            this.transStartDate.Location = new System.Drawing.Point(80, 12);
-            this.transStartDate.Name = "transStartDate";
-            this.transStartDate.Size = new System.Drawing.Size(143, 20);
-            this.transStartDate.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(229, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(19, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "по";
-            // 
-            // transEndDate
-            // 
-            this.transEndDate.Location = new System.Drawing.Point(254, 12);
-            this.transEndDate.Name = "transEndDate";
-            this.transEndDate.Size = new System.Drawing.Size(143, 20);
-            this.transEndDate.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(601, 14);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Наименование";
-            // 
-            // resourseField
-            // 
-            this.resourseField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.resourseField.Location = new System.Drawing.Point(690, 11);
-            this.resourseField.Name = "resourseField";
-            this.resourseField.Size = new System.Drawing.Size(204, 20);
-            this.resourseField.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(309, 624);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(134, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Сумма поступлений, руб.";
-            // 
-            // sumField
-            // 
-            this.sumField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.sumField.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sumField.Location = new System.Drawing.Point(449, 617);
-            this.sumField.Name = "sumField";
-            this.sumField.ReadOnly = true;
-            this.sumField.Size = new System.Drawing.Size(118, 26);
-            this.sumField.TabIndex = 9;
-            this.sumField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -304,6 +206,102 @@
             this.kitchenidDataGridViewTextBoxColumn.ReadOnly = true;
             this.kitchenidDataGridViewTextBoxColumn.Visible = false;
             this.kitchenidDataGridViewTextBoxColumn.Width = 138;
+            // 
+            // stockTransViewBindingSource
+            // 
+            this.stockTransViewBindingSource.DataMember = "StockTransView";
+            this.stockTransViewBindingSource.DataSource = this.cafeDataSet;
+            // 
+            // cafeDataSet
+            // 
+            this.cafeDataSet.DataSetName = "cafeDataSet";
+            this.cafeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // closeBtn
+            // 
+            this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeBtn.Location = new System.Drawing.Point(819, 614);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(75, 23);
+            this.closeBtn.TabIndex = 1;
+            this.closeBtn.Text = "Закрыть";
+            this.closeBtn.UseVisualStyleBackColor = true;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            // 
+            // stockTransViewTableAdapter
+            // 
+            this.stockTransViewTableAdapter.ClearBeforeFill = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Списание с";
+            // 
+            // transStartDate
+            // 
+            this.transStartDate.Location = new System.Drawing.Point(80, 12);
+            this.transStartDate.Name = "transStartDate";
+            this.transStartDate.Size = new System.Drawing.Size(143, 20);
+            this.transStartDate.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(229, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(19, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "по";
+            // 
+            // transEndDate
+            // 
+            this.transEndDate.Location = new System.Drawing.Point(254, 12);
+            this.transEndDate.Name = "transEndDate";
+            this.transEndDate.Size = new System.Drawing.Size(143, 20);
+            this.transEndDate.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(601, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Наименование";
+            // 
+            // resourseField
+            // 
+            this.resourseField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.resourseField.Location = new System.Drawing.Point(690, 11);
+            this.resourseField.Name = "resourseField";
+            this.resourseField.Size = new System.Drawing.Size(204, 20);
+            this.resourseField.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(309, 624);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(134, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Сумма поступлений, руб.";
+            // 
+            // sumField
+            // 
+            this.sumField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.sumField.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sumField.Location = new System.Drawing.Point(449, 617);
+            this.sumField.Name = "sumField";
+            this.sumField.ReadOnly = true;
+            this.sumField.Size = new System.Drawing.Size(118, 26);
+            this.sumField.TabIndex = 9;
+            this.sumField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // StockTransForm
             // 

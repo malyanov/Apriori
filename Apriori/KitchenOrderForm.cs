@@ -53,7 +53,8 @@ namespace Apriori
                 {
                     resultTable = stockItems.Clone();
                     resultTable.Columns.Remove("resource_id");
-                    resultTable.Columns.Remove("income_amount");                    
+                    resultTable.Columns.Remove("income_amount");
+                    resultTable.Columns.Remove("whole_price");
                 }
                 float sum = 0;
                 int j = 0;

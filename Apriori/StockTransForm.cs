@@ -45,7 +45,7 @@ namespace Apriori
             float sum = 0;
             foreach (DataGridViewRow row in transactionsGrid.Rows)
                 sum += ((float)row.Cells[3].Value * (float)row.Cells[5].Value);
-            sumField.Text = sum.ToString();
+            sumField.Text = String.Format("{0:0.00}", sum);
         }
     }    
 }

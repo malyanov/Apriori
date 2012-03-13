@@ -65,6 +65,7 @@ namespace Apriori
                 r.resource_id = (int)resourceField.SelectedValue;
                 r.item_price = (float)priceField.Value;
                 cafeDataSet.stock_incomes.Addstock_incomesRow(r);
+                updateSum();
             }
             catch
             {
@@ -85,8 +86,9 @@ namespace Apriori
         private void updateSum()
         {
             float sum = 0;
+            int index = 4-typeField.SelectedIndex;
             foreach (DataGridViewRow row in stockGridView.Rows)
-                sum += float.Parse((String)row.Cells[6].Value);
+                sum += ((float)row.Cells[5].Value*(float)row.Cells[index].Value);
             sumField.Text = sum.ToString();
         }
 
