@@ -43,13 +43,15 @@
             this.cancelBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.addBtn = new System.Windows.Forms.Button();
+            this.continueBtn = new System.Windows.Forms.Button();
             this.amountField = new System.Windows.Forms.NumericUpDown();
             this.resourceField = new System.Windows.Forms.ComboBox();
             this.resourcesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.processingBtn = new System.Windows.Forms.Button();
+            this.partField = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dishResourcesGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resourcesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cafeDataSet)).BeginInit();
@@ -57,6 +59,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.amountField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resourcesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.partField)).BeginInit();
             this.SuspendLayout();
             // 
             // dishResourcesGrid
@@ -77,7 +80,7 @@
             this.dishResourcesGrid.Location = new System.Drawing.Point(12, 12);
             this.dishResourcesGrid.Name = "dishResourcesGrid";
             this.dishResourcesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dishResourcesGrid.Size = new System.Drawing.Size(528, 258);
+            this.dishResourcesGrid.Size = new System.Drawing.Size(528, 291);
             this.dishResourcesGrid.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
@@ -137,7 +140,7 @@
             // deleteBtn
             // 
             this.deleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteBtn.Location = new System.Drawing.Point(465, 276);
+            this.deleteBtn.Location = new System.Drawing.Point(465, 309);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(75, 23);
             this.deleteBtn.TabIndex = 1;
@@ -148,7 +151,7 @@
             // cancelBtn
             // 
             this.cancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelBtn.Location = new System.Drawing.Point(465, 423);
+            this.cancelBtn.Location = new System.Drawing.Point(465, 455);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 2;
@@ -159,7 +162,7 @@
             // saveBtn
             // 
             this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveBtn.Location = new System.Drawing.Point(384, 423);
+            this.saveBtn.Location = new System.Drawing.Point(384, 455);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(75, 23);
             this.saveBtn.TabIndex = 3;
@@ -171,28 +174,30 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.addBtn);
+            this.groupBox1.Controls.Add(this.partField);
+            this.groupBox1.Controls.Add(this.continueBtn);
             this.groupBox1.Controls.Add(this.amountField);
             this.groupBox1.Controls.Add(this.resourceField);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 305);
+            this.groupBox1.Location = new System.Drawing.Point(12, 338);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(528, 112);
+            this.groupBox1.Size = new System.Drawing.Size(528, 111);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Добавление ингридиента";
             // 
-            // addBtn
+            // continueBtn
             // 
-            this.addBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.addBtn.Location = new System.Drawing.Point(347, 46);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(75, 23);
-            this.addBtn.TabIndex = 3;
-            this.addBtn.Text = "Добавить";
-            this.addBtn.UseVisualStyleBackColor = true;
-            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
+            this.continueBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.continueBtn.Location = new System.Drawing.Point(354, 45);
+            this.continueBtn.Name = "continueBtn";
+            this.continueBtn.Size = new System.Drawing.Size(88, 23);
+            this.continueBtn.TabIndex = 3;
+            this.continueBtn.Text = "Продолжить";
+            this.continueBtn.UseVisualStyleBackColor = true;
+            this.continueBtn.Click += new System.EventHandler(this.continueBtn_Click);
             // 
             // amountField
             // 
@@ -203,7 +208,7 @@
             0,
             0,
             65536});
-            this.amountField.Location = new System.Drawing.Point(184, 64);
+            this.amountField.Location = new System.Drawing.Point(189, 48);
             this.amountField.Maximum = new decimal(new int[] {
             500000,
             0,
@@ -221,7 +226,7 @@
             this.resourceField.DisplayMember = "name";
             this.resourceField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.resourceField.FormattingEnabled = true;
-            this.resourceField.Location = new System.Drawing.Point(185, 31);
+            this.resourceField.Location = new System.Drawing.Point(189, 21);
             this.resourceField.Name = "resourceField";
             this.resourceField.Size = new System.Drawing.Size(143, 21);
             this.resourceField.TabIndex = 1;
@@ -236,7 +241,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(112, 66);
+            this.label2.Location = new System.Drawing.Point(118, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 0;
@@ -246,7 +251,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(112, 34);
+            this.label1.Location = new System.Drawing.Point(117, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 0;
@@ -255,7 +260,7 @@
             // processingBtn
             // 
             this.processingBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.processingBtn.Location = new System.Drawing.Point(374, 276);
+            this.processingBtn.Location = new System.Drawing.Point(374, 309);
             this.processingBtn.Name = "processingBtn";
             this.processingBtn.Size = new System.Drawing.Size(85, 23);
             this.processingBtn.TabIndex = 5;
@@ -263,11 +268,31 @@
             this.processingBtn.UseVisualStyleBackColor = true;
             this.processingBtn.Click += new System.EventHandler(this.processingBtn_Click);
             // 
+            // partField
+            // 
+            this.partField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.partField.DecimalPlaces = 2;
+            this.partField.Location = new System.Drawing.Point(189, 74);
+            this.partField.Name = "partField";
+            this.partField.Size = new System.Drawing.Size(143, 20);
+            this.partField.TabIndex = 4;
+            this.partField.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(131, 76);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Часть, %";
+            // 
             // AddIngrForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 458);
+            this.ClientSize = new System.Drawing.Size(552, 490);
             this.Controls.Add(this.processingBtn);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.saveBtn);
@@ -287,6 +312,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.amountField)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resourcesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.partField)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -303,7 +329,7 @@
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button addBtn;
+        private System.Windows.Forms.Button continueBtn;
         private System.Windows.Forms.NumericUpDown amountField;
         private System.Windows.Forms.ComboBox resourceField;
         private System.Windows.Forms.Label label2;
@@ -314,5 +340,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn part;
         private System.Windows.Forms.Button processingBtn;
+        private System.Windows.Forms.NumericUpDown partField;
+        private System.Windows.Forms.Label label3;
     }
 }

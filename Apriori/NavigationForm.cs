@@ -79,5 +79,15 @@ namespace Apriori
         {
             (new KitchenWriteoffsForm()).ShowDialog(this);
         }
+
+        private void calcCardsBtn_Click(object sender, EventArgs e)
+        {
+            (new TechCardsForm()).ShowDialog(this);
+        }
+
+        private void settingsToolStrip_Click(object sender, EventArgs e)
+        {
+            (new SettingsForm()).ShowDialog(this);
+        }
     }
 }

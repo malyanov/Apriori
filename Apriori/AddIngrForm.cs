@@ -18,6 +18,12 @@ namespace Apriori
                 this.Text = "Добавление ингридиентов к блюду "+dishName;
             else this.Text = "Редактирование ингридиентов к блюду " + dishName;
             InitializeComponent();
+            dishResourcesGrid.DataError += new DataGridViewDataErrorEventHandler(dishResourcesGrid_DataError);
+        }
+
+        void dishResourcesGrid_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Введено неверное значение", "Ошибка данных!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void AddIngrForm_Load(object sender, EventArgs e)
@@ -35,9 +41,9 @@ namespace Apriori
                 dishResourcesGrid.Rows.RemoveAt(dishResourcesGrid.SelectedRows[0].Index);
         }
 
-        private void addBtn_Click(object sender, EventArgs e)
+        private void continueBtn_Click(object sender, EventArgs e)
         {
-            if (amountField.Text.Trim() == "")
+            if (amountField.Value == 0||partField.Value==0)
             {
                 MessageBox.Show("Заполните все поля!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -48,8 +54,12 @@ namespace Apriori
                 r.dish_id = dishId;
                 r.amount = (float)amountField.Value;
                 r.resource_id = (int)resourceField.SelectedValue;
+                r.part = (float)partField.Value;
                 cafeDataSet.dishes_resources.Adddishes_resourcesRow(r);
-                amountField.Value = 0;
+                dishes_resourcesTableAdapter.Update(cafeDataSet.dishes_resources);
+                amountField.Value=partField.Value = 0;
+                int id = dishes_resourcesTableAdapter.getMaxID().Value;
+                (new ResProcessesForm(id)).ShowDialog(this);
             }
             catch
             {
@@ -78,7 +88,8 @@ namespace Apriori
 
         private void processingBtn_Click(object sender, EventArgs e)
         {
-
+            if (dishResourcesGrid.CurrentRow != null)
+                (new ResProcessesForm((int)dishResourcesGrid.CurrentRow.Cells[0].Value)).ShowDialog(this);
         }
     }
 }

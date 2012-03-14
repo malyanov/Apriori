@@ -66,6 +66,8 @@ namespace Apriori
                 r.item_price = (float)priceField.Value;
                 cafeDataSet.stock_incomes.Addstock_incomesRow(r);
                 updateSum();
+                amountField.Value = 0;
+                priceField.Value=0;
             }
             catch
             {
@@ -89,11 +91,13 @@ namespace Apriori
             int index = 4-typeField.SelectedIndex;
             foreach (DataGridViewRow row in stockGridView.Rows)
                 sum += ((float)row.Cells[5].Value*(float)row.Cells[index].Value);
-            sumField.Text = sum.ToString();
+            sumField.Text = String.Format("{0:0.00}", sum);
         }
 
         private void writeOffBtn_Click(object sender, EventArgs e)
         {
+            if (stockGridView.SelectedRows.Count == 0)
+                return;
             form = new WriteOffForm((float)stockGridView.SelectedRows[0].Cells[4].Value);
             form.FormClosing += new FormClosingEventHandler(form_FormClosing);
             form.ShowDialog(this);

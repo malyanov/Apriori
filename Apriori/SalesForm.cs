@@ -43,8 +43,15 @@ namespace Apriori
 
         private void saleBtn_Click(object sender, EventArgs e)
         {
-            int id=(int)dishField.SelectedValue;
+            if (dishField.SelectedValue == null)
+                return;
             int amount = (int)amountField.Value;
+            if (amount == 0)
+            {
+                MessageBox.Show("Введите количество!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            int id=(int)dishField.SelectedValue;            
             kitchenIncomesTableAdapter.writeOffDishes(amount, id);
             cafeDataSet.salesRow row = cafeDataSet.sales.NewsalesRow();
             row.amount = amount;

@@ -58,6 +58,8 @@ namespace Apriori
 
         private void writeOffBtn_Click(object sender, EventArgs e)
         {
+            if (kitchenGridView.SelectedRows.Count == 0)
+                return;
             form = new WriteOffForm((int)kitchenGridView.SelectedRows[0].Cells[5].Value);
             form.FormClosing += new FormClosingEventHandler(form_FormClosing);
             form.ShowDialog(this);

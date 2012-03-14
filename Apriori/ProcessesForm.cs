@@ -23,15 +23,16 @@ namespace Apriori
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            if (nameField.Text.Trim() == "")
+            if (nameField.Text.Trim() == ""||factorField.Value==0)
             {
-                MessageBox.Show("Введите название!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Заполните все поля!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             try
             {                
-                cafeDataSet.tech_processes.Addtech_processesRow(nameField.Text);
+                cafeDataSet.tech_processes.Addtech_processesRow(nameField.Text, (float)factorField.Value);
                 nameField.Text = "";
+                factorField.Value = 0;
             }
             catch
             {

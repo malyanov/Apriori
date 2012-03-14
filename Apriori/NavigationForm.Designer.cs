@@ -48,6 +48,8 @@
             this.оПрограммаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.calcCardsBtn = new System.Windows.Forms.Button();
+            this.settingsToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -216,6 +218,7 @@
             // файлToolStripMenuItem
             // 
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStrip,
             this.closeToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
@@ -224,7 +227,7 @@
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.closeToolStripMenuItem.Text = "Закрыть";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -245,6 +248,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.calcCardsBtn);
             this.groupBox4.Controls.Add(this.processesBtn);
             this.groupBox4.Location = new System.Drawing.Point(12, 321);
             this.groupBox4.Name = "groupBox4";
@@ -252,6 +256,23 @@
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Технологические карты";
+            // 
+            // calcCardsBtn
+            // 
+            this.calcCardsBtn.Location = new System.Drawing.Point(212, 19);
+            this.calcCardsBtn.Name = "calcCardsBtn";
+            this.calcCardsBtn.Size = new System.Drawing.Size(177, 33);
+            this.calcCardsBtn.TabIndex = 1;
+            this.calcCardsBtn.Text = "Рассчёт карт";
+            this.calcCardsBtn.UseVisualStyleBackColor = true;
+            this.calcCardsBtn.Click += new System.EventHandler(this.calcCardsBtn_Click);
+            // 
+            // settingsToolStrip
+            // 
+            this.settingsToolStrip.Name = "settingsToolStrip";
+            this.settingsToolStrip.Size = new System.Drawing.Size(152, 22);
+            this.settingsToolStrip.Text = "Настройки";
+            this.settingsToolStrip.Click += new System.EventHandler(this.settingsToolStrip_Click);
             // 
             // NavigationForm
             // 
@@ -302,5 +323,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button stockWriteoffsBtn;
         private System.Windows.Forms.Button kitchenWriteoffsBtn;
+        private System.Windows.Forms.Button calcCardsBtn;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStrip;
     }
 }

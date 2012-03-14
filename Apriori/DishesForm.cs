@@ -48,11 +48,12 @@ namespace Apriori
                     (int)marginField.Value, (float)fixPriceField.Value));
                 (new AddIngrForm(dishesTableAdapter.getMaxID().Value, nameField.Text, true)).Show(this);
                 nameField.Text = descriptionField.Text = "";
+                marginField.Value = fixPriceField.Value = 0;
             }
             catch
             {
                 MessageBox.Show("Введены неверные данные!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }                        
         }
 
         private void saveBtn_Click(object sender, EventArgs e)

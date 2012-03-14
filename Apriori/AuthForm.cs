@@ -48,6 +48,7 @@ namespace Apriori
                 navForm.Show();
                 Hide();
             }
+            else MessageBox.Show("Неправильный логин или пароль!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void AuthForm_Load(object sender, EventArgs e)

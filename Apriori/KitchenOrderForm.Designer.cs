@@ -35,6 +35,8 @@
             this.cafeDataSet = new Apriori.cafeDataSet();
             this.amountField = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.fixPriceField = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.calculateBtn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,8 +61,7 @@
             this.resetBtn = new System.Windows.Forms.Button();
             this.kitchenIncomesTableAdapter = new Apriori.cafeDataSetTableAdapters.kitchen_incomesTableAdapter();
             this.stockTransactionsTableAdapter = new Apriori.cafeDataSetTableAdapters.stock_transactionsTableAdapter();
-            this.label3 = new System.Windows.Forms.Label();
-            this.fixPriceField = new System.Windows.Forms.TextBox();
+            this.variablesTableAdapter = new Apriori.cafeDataSetTableAdapters.variablesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dishesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cafeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.amountField)).BeginInit();
@@ -146,6 +147,27 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Заказ";
+            // 
+            // fixPriceField
+            // 
+            this.fixPriceField.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.fixPriceField.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dishesBindingSource, "fix_price", true));
+            this.fixPriceField.Location = new System.Drawing.Point(404, 76);
+            this.fixPriceField.Name = "fixPriceField";
+            this.fixPriceField.ReadOnly = true;
+            this.fixPriceField.Size = new System.Drawing.Size(85, 20);
+            this.fixPriceField.TabIndex = 8;
+            this.fixPriceField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(306, 79);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Фикс. цена, руб.";
             // 
             // calculateBtn
             // 
@@ -380,26 +402,9 @@
             // 
             this.stockTransactionsTableAdapter.ClearBeforeFill = true;
             // 
-            // label3
+            // variablesTableAdapter
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(306, 79);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Фикс. цена, руб.";
-            // 
-            // fixPriceField
-            // 
-            this.fixPriceField.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.fixPriceField.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dishesBindingSource, "fix_price", true));
-            this.fixPriceField.Location = new System.Drawing.Point(404, 76);
-            this.fixPriceField.Name = "fixPriceField";
-            this.fixPriceField.ReadOnly = true;
-            this.fixPriceField.Size = new System.Drawing.Size(85, 20);
-            this.fixPriceField.TabIndex = 8;
-            this.fixPriceField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.variablesTableAdapter.ClearBeforeFill = true;
             // 
             // KitchenOrderForm
             // 
@@ -462,5 +467,6 @@
         private cafeDataSetTableAdapters.stock_transactionsTableAdapter stockTransactionsTableAdapter;
         private System.Windows.Forms.TextBox fixPriceField;
         private System.Windows.Forms.Label label3;
+        private cafeDataSetTableAdapters.variablesTableAdapter variablesTableAdapter;
     }
 }

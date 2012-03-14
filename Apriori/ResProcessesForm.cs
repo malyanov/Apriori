@@ -39,20 +39,13 @@ namespace Apriori
         }
 
         private void addBtn_Click(object sender, EventArgs e)
-        {
-            if (factorField.Value==0)
-            {
-                MessageBox.Show("Введите коэффициент!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+        {            
             try
             {
                 cafeDataSet.dish_cookingsRow r = cafeDataSet.dish_cookings.Newdish_cookingsRow();
-                r.dish_resources_id = dishResourceID;
-                r.factor = (float)factorField.Value;
+                r.dish_resources_id = dishResourceID;                
                 r.tech_process_id = (int)processField.SelectedValue;
-                cafeDataSet.dish_cookings.Adddish_cookingsRow(r);
-                factorField.Value = 0;
+                cafeDataSet.dish_cookings.Adddish_cookingsRow(r);                
             }
             catch
             {

@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dishesGrid = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fix_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.margin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dishesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cafeDataSet = new Apriori.cafeDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -52,6 +47,11 @@
             this.cancelBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
             this.resourcesBtn = new System.Windows.Forms.Button();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fix_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.margin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dishesGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dishesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cafeDataSet)).BeginInit();
@@ -81,39 +81,6 @@
             this.dishesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dishesGrid.Size = new System.Drawing.Size(531, 254);
             this.dishesGrid.TabIndex = 0;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "№";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Навание";
-            this.nameDataGridViewTextBoxColumn.MaxInputLength = 200;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Описание";
-            this.descriptionDataGridViewTextBoxColumn.MaxInputLength = 400;
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            // 
-            // fix_price
-            // 
-            this.fix_price.DataPropertyName = "fix_price";
-            this.fix_price.HeaderText = "Фикс. цена, руб.";
-            this.fix_price.Name = "fix_price";
-            // 
-            // margin
-            // 
-            this.margin.DataPropertyName = "margin";
-            this.margin.HeaderText = "Наценка, %";
-            this.margin.Name = "margin";
             // 
             // dishesBindingSource
             // 
@@ -297,6 +264,44 @@
             this.resourcesBtn.UseVisualStyleBackColor = true;
             this.resourcesBtn.Click += new System.EventHandler(this.resourcesBtn_Click);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.FillWeight = 50F;
+            this.idDataGridViewTextBoxColumn.HeaderText = "№";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.FillWeight = 93.27411F;
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Навание";
+            this.nameDataGridViewTextBoxColumn.MaxInputLength = 200;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.FillWeight = 93.27411F;
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Описание";
+            this.descriptionDataGridViewTextBoxColumn.MaxInputLength = 400;
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            // 
+            // fix_price
+            // 
+            this.fix_price.DataPropertyName = "fix_price";
+            this.fix_price.FillWeight = 93.27411F;
+            this.fix_price.HeaderText = "Фикс. цена, руб.";
+            this.fix_price.Name = "fix_price";
+            // 
+            // margin
+            // 
+            this.margin.DataPropertyName = "margin";
+            this.margin.FillWeight = 93.27411F;
+            this.margin.HeaderText = "Наценка, %";
+            this.margin.Name = "margin";
+            // 
             // DishesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,14 +345,14 @@
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button resourcesBtn;
+        private System.Windows.Forms.NumericUpDown fixPriceField;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown marginField;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fix_price;
         private System.Windows.Forms.DataGridViewTextBoxColumn margin;
-        private System.Windows.Forms.NumericUpDown fixPriceField;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown marginField;
-        private System.Windows.Forms.Label label4;
     }
 }

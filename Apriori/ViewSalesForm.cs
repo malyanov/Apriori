@@ -49,5 +49,10 @@ namespace Apriori
             realSumField.Text = String.Format("{0:0.00}", realSum);
             diffField.Text = String.Format("{0:0.00}", diff);
         }
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

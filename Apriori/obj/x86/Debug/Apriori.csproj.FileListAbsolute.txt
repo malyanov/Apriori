@@ -59,3 +59,6 @@ D:\projects\Apriori\Apriori\obj\x86\Debug\Apriori.exe
 D:\projects\Apriori\Apriori\obj\x86\Debug\Apriori.pdb
 D:\projects\Apriori\Apriori\obj\x86\Debug\Apriori.StockWriteoffsForm.resources
 D:\projects\Apriori\Apriori\obj\x86\Debug\Apriori.KitchenWriteoffsForm.resources
+D:\projects\Apriori\Apriori\obj\x86\Debug\Apriori.ResProcessesForm.resources
+D:\projects\Apriori\Apriori\obj\x86\Debug\Apriori.TechCardsForm.resources
+D:\projects\Apriori\Apriori\obj\x86\Debug\Apriori.SettingsForm.resources

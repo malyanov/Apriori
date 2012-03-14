@@ -51,6 +51,7 @@ namespace Apriori
             {
                 cafeDataSet.resources.AddresourcesRow(nameField.Text, (String)measureFiled.SelectedItem, (float)seasonMarginField.Value);
                 nameField.Text = "";
+                seasonMarginField.Value = 0;
             }
             catch
             {

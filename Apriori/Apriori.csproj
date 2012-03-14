@@ -65,11 +65,23 @@
     <Compile Include="KitchenWriteoffsForm.Designer.cs">
       <DependentUpon>KitchenWriteoffsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="StockWriteoffsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StockWriteoffsForm.Designer.cs">
       <DependentUpon>StockWriteoffsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TechCardsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TechCardsForm.Designer.cs">
+      <DependentUpon>TechCardsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="WriteOffForm.cs">
       <SubType>Form</SubType>
@@ -166,8 +178,14 @@
     <EmbeddedResource Include="KitchenWriteoffsForm.resx">
       <DependentUpon>KitchenWriteoffsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StockWriteoffsForm.resx">
       <DependentUpon>StockWriteoffsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TechCardsForm.resx">
+      <DependentUpon>TechCardsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WriteOffForm.resx">
       <DependentUpon>WriteOffForm.cs</DependentUpon>

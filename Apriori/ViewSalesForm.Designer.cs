@@ -30,6 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.salesGridView = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saletimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dishnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salepriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itempriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diffpriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salesViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cafeDataSet = new Apriori.cafeDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.startDateField = new System.Windows.Forms.DateTimePicker();
@@ -40,22 +48,14 @@
             this.closeBtn = new System.Windows.Forms.Button();
             this.sumField = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.salesViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.salesViewTableAdapter = new Apriori.cafeDataSetTableAdapters.SalesViewTableAdapter();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.saletimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dishnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salepriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itempriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diffpriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.realSumField = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.diffField = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.salesGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cafeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cafeDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // salesGridView
@@ -83,6 +83,60 @@
             this.salesGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.salesGridView.Size = new System.Drawing.Size(867, 455);
             this.salesGridView.TabIndex = 0;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "№";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // saletimeDataGridViewTextBoxColumn
+            // 
+            this.saletimeDataGridViewTextBoxColumn.DataPropertyName = "sale_time";
+            this.saletimeDataGridViewTextBoxColumn.HeaderText = "Дата";
+            this.saletimeDataGridViewTextBoxColumn.Name = "saletimeDataGridViewTextBoxColumn";
+            this.saletimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dishnameDataGridViewTextBoxColumn
+            // 
+            this.dishnameDataGridViewTextBoxColumn.DataPropertyName = "dish_name";
+            this.dishnameDataGridViewTextBoxColumn.HeaderText = "Блюдо";
+            this.dishnameDataGridViewTextBoxColumn.Name = "dishnameDataGridViewTextBoxColumn";
+            this.dishnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Количество";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // salepriceDataGridViewTextBoxColumn
+            // 
+            this.salepriceDataGridViewTextBoxColumn.DataPropertyName = "sale_price";
+            this.salepriceDataGridViewTextBoxColumn.HeaderText = "Цена продажи, руб.";
+            this.salepriceDataGridViewTextBoxColumn.Name = "salepriceDataGridViewTextBoxColumn";
+            this.salepriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // itempriceDataGridViewTextBoxColumn
+            // 
+            this.itempriceDataGridViewTextBoxColumn.DataPropertyName = "item_price";
+            this.itempriceDataGridViewTextBoxColumn.HeaderText = "Расч. цена, руб.";
+            this.itempriceDataGridViewTextBoxColumn.Name = "itempriceDataGridViewTextBoxColumn";
+            this.itempriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // diffpriceDataGridViewTextBoxColumn
+            // 
+            this.diffpriceDataGridViewTextBoxColumn.DataPropertyName = "diff_price";
+            this.diffpriceDataGridViewTextBoxColumn.HeaderText = "Разница, руб.";
+            this.diffpriceDataGridViewTextBoxColumn.Name = "diffpriceDataGridViewTextBoxColumn";
+            this.diffpriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // salesViewBindingSource
+            // 
+            this.salesViewBindingSource.DataMember = "SalesView";
+            this.salesViewBindingSource.DataSource = this.cafeDataSet;
             // 
             // cafeDataSet
             // 
@@ -148,6 +202,7 @@
             this.closeBtn.TabIndex = 6;
             this.closeBtn.Text = "Закрыть";
             this.closeBtn.UseVisualStyleBackColor = true;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
             // sumField
             // 
@@ -170,63 +225,9 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Сумма продаж, руб.";
             // 
-            // salesViewBindingSource
-            // 
-            this.salesViewBindingSource.DataMember = "SalesView";
-            this.salesViewBindingSource.DataSource = this.cafeDataSet;
-            // 
             // salesViewTableAdapter
             // 
             this.salesViewTableAdapter.ClearBeforeFill = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "№";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // saletimeDataGridViewTextBoxColumn
-            // 
-            this.saletimeDataGridViewTextBoxColumn.DataPropertyName = "sale_time";
-            this.saletimeDataGridViewTextBoxColumn.HeaderText = "Дата";
-            this.saletimeDataGridViewTextBoxColumn.Name = "saletimeDataGridViewTextBoxColumn";
-            this.saletimeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dishnameDataGridViewTextBoxColumn
-            // 
-            this.dishnameDataGridViewTextBoxColumn.DataPropertyName = "dish_name";
-            this.dishnameDataGridViewTextBoxColumn.HeaderText = "Блюдо";
-            this.dishnameDataGridViewTextBoxColumn.Name = "dishnameDataGridViewTextBoxColumn";
-            this.dishnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Количество";
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // salepriceDataGridViewTextBoxColumn
-            // 
-            this.salepriceDataGridViewTextBoxColumn.DataPropertyName = "sale_price";
-            this.salepriceDataGridViewTextBoxColumn.HeaderText = "Цена продажи, руб.";
-            this.salepriceDataGridViewTextBoxColumn.Name = "salepriceDataGridViewTextBoxColumn";
-            this.salepriceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // itempriceDataGridViewTextBoxColumn
-            // 
-            this.itempriceDataGridViewTextBoxColumn.DataPropertyName = "item_price";
-            this.itempriceDataGridViewTextBoxColumn.HeaderText = "Расч. цена, руб.";
-            this.itempriceDataGridViewTextBoxColumn.Name = "itempriceDataGridViewTextBoxColumn";
-            this.itempriceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // diffpriceDataGridViewTextBoxColumn
-            // 
-            this.diffpriceDataGridViewTextBoxColumn.DataPropertyName = "diff_price";
-            this.diffpriceDataGridViewTextBoxColumn.HeaderText = "Разница, руб.";
-            this.diffpriceDataGridViewTextBoxColumn.Name = "diffpriceDataGridViewTextBoxColumn";
-            this.diffpriceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // realSumField
             // 
@@ -295,8 +296,8 @@
             this.Text = "История продаж";
             this.Load += new System.EventHandler(this.ViewSalesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.salesGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cafeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cafeDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

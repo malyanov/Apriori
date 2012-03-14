@@ -11,9 +11,11 @@ namespace Apriori
     public partial class KitchenOrderForm : Form
     {
         private DataTable resultTable;
+        private float maxDiff = 0;
         public KitchenOrderForm()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            maxDiff = float.Parse(variablesTableAdapter.getVarByName("MAX_PRICE_DIF"));
         }
 
         private void KitchenForm_Load(object sender, EventArgs e)
@@ -25,7 +27,9 @@ namespace Apriori
         }
 
         private void calculateBtn_Click(object sender, EventArgs e)
-        {            
+        {
+            if (dishField.SelectedValue == null)
+                return;
             DataTable resourcesTable = dishesResourcesTableAdapter.GetDataByDishID((int)dishField.SelectedValue);
             int multiplier = (int)amountField.Value, resourceId;
             float amount;
@@ -99,7 +103,7 @@ namespace Apriori
         {
             //debug add variables form
             double diff=double.Parse(margCostField.Text) - double.Parse(fixPriceField.Text);
-            if (diff > 1&&MessageBox.Show("Превышен лимит разницы с реальной ценой. Убыток c 1 единицы: " + diff + " руб.", "Предупреждение!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)            
+            if (diff>maxDiff&&MessageBox.Show("Превышен лимит разницы с реальной ценой. Убыток c 1 единицы: " + diff + " руб.", "Предупреждение!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)            
                     return;
             DataRow row;
             cafeDataSet.stock_transactionsRow transRow;
