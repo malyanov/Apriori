@@ -64,7 +64,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(451, 89);
+            this.groupBox1.Size = new System.Drawing.Size(585, 89);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Блюдо";
@@ -72,7 +72,7 @@
             // calcBtn
             // 
             this.calcBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.calcBtn.Location = new System.Drawing.Point(310, 34);
+            this.calcBtn.Location = new System.Drawing.Point(377, 34);
             this.calcBtn.Name = "calcBtn";
             this.calcBtn.Size = new System.Drawing.Size(75, 23);
             this.calcBtn.TabIndex = 4;
@@ -83,7 +83,7 @@
             // weightField
             // 
             this.weightField.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.weightField.Location = new System.Drawing.Point(147, 52);
+            this.weightField.Location = new System.Drawing.Point(214, 52);
             this.weightField.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -98,7 +98,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(59, 54);
+            this.label2.Location = new System.Drawing.Point(126, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 2;
@@ -111,7 +111,7 @@
             this.dishField.DisplayMember = "name";
             this.dishField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dishField.FormattingEnabled = true;
-            this.dishField.Location = new System.Drawing.Point(147, 19);
+            this.dishField.Location = new System.Drawing.Point(214, 19);
             this.dishField.Name = "dishField";
             this.dishField.Size = new System.Drawing.Size(141, 21);
             this.dishField.TabIndex = 1;
@@ -131,7 +131,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(84, 22);
+            this.label1.Location = new System.Drawing.Point(151, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 0;
@@ -145,7 +145,7 @@
             this.groupBox2.Controls.Add(this.calculationsGrid);
             this.groupBox2.Location = new System.Drawing.Point(12, 107);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(451, 272);
+            this.groupBox2.Size = new System.Drawing.Size(585, 340);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Расчёт";
@@ -163,13 +163,13 @@
             this.calculationsGrid.Name = "calculationsGrid";
             this.calculationsGrid.ReadOnly = true;
             this.calculationsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.calculationsGrid.Size = new System.Drawing.Size(439, 247);
+            this.calculationsGrid.Size = new System.Drawing.Size(573, 315);
             this.calculationsGrid.TabIndex = 0;
             // 
             // closeBtn
             // 
             this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeBtn.Location = new System.Drawing.Point(388, 385);
+            this.closeBtn.Location = new System.Drawing.Point(522, 453);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(75, 23);
             this.closeBtn.TabIndex = 2;
@@ -193,7 +193,7 @@
             // 
             this.sumField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.sumField.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sumField.Location = new System.Drawing.Point(210, 383);
+            this.sumField.Location = new System.Drawing.Point(277, 451);
             this.sumField.Name = "sumField";
             this.sumField.ReadOnly = true;
             this.sumField.Size = new System.Drawing.Size(100, 26);
@@ -204,7 +204,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(80, 390);
+            this.label3.Location = new System.Drawing.Point(147, 458);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(124, 13);
             this.label3.TabIndex = 4;
@@ -214,7 +214,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 420);
+            this.ClientSize = new System.Drawing.Size(609, 488);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.sumField);
             this.Controls.Add(this.closeBtn);

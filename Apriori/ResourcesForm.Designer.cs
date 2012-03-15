@@ -34,6 +34,8 @@
             this.cafeDataSet = new Apriori.cafeDataSet();
             this.resourcesTableAdapter = new Apriori.cafeDataSetTableAdapters.resourcesTableAdapter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.seasonMarginField = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
             this.addBtn = new System.Windows.Forms.Button();
             this.measureFiled = new System.Windows.Forms.ComboBox();
             this.nameField = new System.Windows.Forms.TextBox();
@@ -46,8 +48,6 @@
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.measure = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.season_margin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label3 = new System.Windows.Forms.Label();
-            this.seasonMarginField = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.resourcesGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resourcesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cafeDataSet)).BeginInit();
@@ -73,7 +73,7 @@
             this.resourcesGrid.Location = new System.Drawing.Point(12, 12);
             this.resourcesGrid.Name = "resourcesGrid";
             this.resourcesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.resourcesGrid.Size = new System.Drawing.Size(630, 337);
+            this.resourcesGrid.Size = new System.Drawing.Size(791, 342);
             this.resourcesGrid.TabIndex = 0;
             // 
             // resourcesBindingSource
@@ -101,17 +101,47 @@
             this.groupBox1.Controls.Add(this.nameField);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 384);
+            this.groupBox1.Location = new System.Drawing.Point(12, 389);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(630, 147);
+            this.groupBox1.Size = new System.Drawing.Size(791, 147);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Добавление ингридиента";
             // 
+            // seasonMarginField
+            // 
+            this.seasonMarginField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.seasonMarginField.DecimalPlaces = 2;
+            this.seasonMarginField.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.seasonMarginField.Location = new System.Drawing.Point(325, 89);
+            this.seasonMarginField.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.seasonMarginField.Name = "seasonMarginField";
+            this.seasonMarginField.Size = new System.Drawing.Size(155, 20);
+            this.seasonMarginField.TabIndex = 5;
+            this.seasonMarginField.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(192, 91);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(127, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Сезонная наценка, руб.";
+            // 
             // addBtn
             // 
             this.addBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.addBtn.Location = new System.Drawing.Point(435, 58);
+            this.addBtn.Location = new System.Drawing.Point(515, 58);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(75, 23);
             this.addBtn.TabIndex = 3;
@@ -131,7 +161,7 @@
             "л",
             "мл",
             "шт"});
-            this.measureFiled.Location = new System.Drawing.Point(245, 60);
+            this.measureFiled.Location = new System.Drawing.Point(325, 60);
             this.measureFiled.Name = "measureFiled";
             this.measureFiled.Size = new System.Drawing.Size(155, 21);
             this.measureFiled.TabIndex = 2;
@@ -139,7 +169,7 @@
             // nameField
             // 
             this.nameField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.nameField.Location = new System.Drawing.Point(245, 29);
+            this.nameField.Location = new System.Drawing.Point(325, 29);
             this.nameField.MaxLength = 100;
             this.nameField.Name = "nameField";
             this.nameField.Size = new System.Drawing.Size(155, 20);
@@ -149,7 +179,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(130, 63);
+            this.label2.Location = new System.Drawing.Point(210, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 13);
             this.label2.TabIndex = 0;
@@ -159,7 +189,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(182, 32);
+            this.label1.Location = new System.Drawing.Point(262, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 0;
@@ -168,7 +198,7 @@
             // cancelBtn
             // 
             this.cancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelBtn.Location = new System.Drawing.Point(567, 537);
+            this.cancelBtn.Location = new System.Drawing.Point(728, 542);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 2;
@@ -179,7 +209,7 @@
             // saveBtn
             // 
             this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveBtn.Location = new System.Drawing.Point(486, 537);
+            this.saveBtn.Location = new System.Drawing.Point(647, 542);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(75, 23);
             this.saveBtn.TabIndex = 3;
@@ -190,7 +220,7 @@
             // deleteBtn
             // 
             this.deleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteBtn.Location = new System.Drawing.Point(567, 355);
+            this.deleteBtn.Location = new System.Drawing.Point(728, 360);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(75, 23);
             this.deleteBtn.TabIndex = 4;
@@ -201,6 +231,7 @@
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.FillWeight = 50F;
             this.idDataGridViewTextBoxColumn.HeaderText = "№";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
@@ -225,41 +256,11 @@
             this.season_margin.HeaderText = "Сезонная наценка, руб.";
             this.season_margin.Name = "season_margin";
             // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(112, 91);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Сезонная наценка, руб.";
-            // 
-            // seasonMarginField
-            // 
-            this.seasonMarginField.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.seasonMarginField.DecimalPlaces = 2;
-            this.seasonMarginField.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.seasonMarginField.Location = new System.Drawing.Point(245, 89);
-            this.seasonMarginField.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.seasonMarginField.Name = "seasonMarginField";
-            this.seasonMarginField.Size = new System.Drawing.Size(155, 20);
-            this.seasonMarginField.TabIndex = 5;
-            this.seasonMarginField.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // ResourcesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 572);
+            this.ClientSize = new System.Drawing.Size(815, 577);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.cancelBtn);
@@ -295,11 +296,11 @@
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.NumericUpDown seasonMarginField;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn measure;
         private System.Windows.Forms.DataGridViewTextBoxColumn season_margin;
-        private System.Windows.Forms.NumericUpDown seasonMarginField;
-        private System.Windows.Forms.Label label3;
     }
 }

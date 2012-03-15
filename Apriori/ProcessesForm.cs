@@ -14,25 +14,23 @@ namespace Apriori
         {
             InitializeComponent();
         }
+
         private void MeasuresForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'cafeDataSet.tech_processes' table. You can move, or remove it, as needed.
             this.tech_processesTableAdapter.Fill(this.cafeDataSet.tech_processes);
-
         }
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            if (nameField.Text.Trim() == ""||factorField.Value==0)
+            if (nameField.Text.Trim() == "")
             {
-                MessageBox.Show("Заполните все поля!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Введите название!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             try
             {                
-                cafeDataSet.tech_processes.Addtech_processesRow(nameField.Text, (float)factorField.Value);
-                nameField.Text = "";
-                factorField.Value = 0;
+                cafeDataSet.tech_processes.Addtech_processesRow(nameField.Text);
+                nameField.Text = "";                
             }
             catch
             {

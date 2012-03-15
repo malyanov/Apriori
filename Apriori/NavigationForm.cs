@@ -89,5 +89,10 @@ namespace Apriori
         {
             (new SettingsForm()).ShowDialog(this);
         }
+
+        private void resProcessingBtn_Click(object sender, EventArgs e)
+        {
+            (new ResProcessingForm()).ShowDialog(this);
+        }
     }
 }

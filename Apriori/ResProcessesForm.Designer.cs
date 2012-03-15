@@ -69,7 +69,7 @@
             this.resProcessesGrid.Location = new System.Drawing.Point(12, 12);
             this.resProcessesGrid.Name = "resProcessesGrid";
             this.resProcessesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.resProcessesGrid.Size = new System.Drawing.Size(378, 218);
+            this.resProcessesGrid.Size = new System.Drawing.Size(421, 268);
             this.resProcessesGrid.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
@@ -122,9 +122,9 @@
             this.groupBox1.Controls.Add(this.addBtn);
             this.groupBox1.Controls.Add(this.processField);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 255);
+            this.groupBox1.Location = new System.Drawing.Point(12, 305);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(378, 89);
+            this.groupBox1.Size = new System.Drawing.Size(421, 89);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Добавление технол. процесса";
@@ -132,7 +132,7 @@
             // addBtn
             // 
             this.addBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.addBtn.Location = new System.Drawing.Point(271, 33);
+            this.addBtn.Location = new System.Drawing.Point(292, 33);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(75, 23);
             this.addBtn.TabIndex = 3;
@@ -147,7 +147,7 @@
             this.processField.DisplayMember = "name";
             this.processField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.processField.FormattingEnabled = true;
-            this.processField.Location = new System.Drawing.Point(95, 34);
+            this.processField.Location = new System.Drawing.Point(116, 34);
             this.processField.Name = "processField";
             this.processField.Size = new System.Drawing.Size(155, 21);
             this.processField.TabIndex = 1;
@@ -162,7 +162,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 38);
+            this.label1.Location = new System.Drawing.Point(51, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 0;
@@ -171,7 +171,7 @@
             // cancelBtn
             // 
             this.cancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelBtn.Location = new System.Drawing.Point(315, 355);
+            this.cancelBtn.Location = new System.Drawing.Point(358, 405);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 2;
@@ -182,7 +182,7 @@
             // saveBtn
             // 
             this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveBtn.Location = new System.Drawing.Point(234, 355);
+            this.saveBtn.Location = new System.Drawing.Point(277, 405);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(75, 23);
             this.saveBtn.TabIndex = 3;
@@ -193,7 +193,7 @@
             // deleteBtn
             // 
             this.deleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteBtn.Location = new System.Drawing.Point(315, 236);
+            this.deleteBtn.Location = new System.Drawing.Point(358, 286);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(75, 23);
             this.deleteBtn.TabIndex = 4;
@@ -205,7 +205,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 383);
+            this.ClientSize = new System.Drawing.Size(445, 433);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.cancelBtn);

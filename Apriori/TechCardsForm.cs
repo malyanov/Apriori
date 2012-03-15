@@ -43,11 +43,12 @@ namespace Apriori
             foreach (DataRow row in resources.Rows)
             {
                 int id=(int)row["id"];
+                int resourceId = (int)row["resource_id"];
                 float part=(float)row["part"]/100f;
-                double? obj=dishCookingsTableAdapter.getFactorsProduct(id);
+                object obj=dishCookingsTableAdapter.getFactorsProduct(id, resourceId);
                 double factor=1;
                 if (obj != null)
-                    factor = obj.Value;
+                    factor = (double)obj;
                 double brutto = Math.Round(weight * part * factor, 0);
                 sum += brutto;
                 calculationsGrid.Rows.Add(row["name"], brutto, Math.Round(weight * part, 0));

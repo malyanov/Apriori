@@ -53,17 +53,23 @@
     <Compile Include="AddIngrForm.Designer.cs">
       <DependentUpon>AddIngrForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ResProcessesForm.cs">
+    <Compile Include="ResProcessingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ResProcessesForm.Designer.cs">
-      <DependentUpon>ResProcessesForm.cs</DependentUpon>
+    <Compile Include="ResProcessingForm.Designer.cs">
+      <DependentUpon>ResProcessingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="KitchenWriteoffsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="KitchenWriteoffsForm.Designer.cs">
       <DependentUpon>KitchenWriteoffsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddProcessesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResProcessesForm.Designer.cs">
+      <DependentUpon>AddProcessesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SettingsForm.cs">
       <SubType>Form</SubType>
@@ -172,8 +178,11 @@
     <EmbeddedResource Include="AddIngrForm.resx">
       <DependentUpon>AddIngrForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ResProcessesForm.resx">
-      <DependentUpon>ResProcessesForm.cs</DependentUpon>
+    <EmbeddedResource Include="AddProcessesForm.resx">
+      <DependentUpon>AddProcessesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResProcessingForm.resx">
+      <DependentUpon>ResProcessingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KitchenWriteoffsForm.resx">
       <DependentUpon>KitchenWriteoffsForm.cs</DependentUpon>

@@ -44,12 +44,13 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.calcCardsBtn = new System.Windows.Forms.Button();
-            this.settingsToolStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.resProcessingBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -224,10 +225,17 @@
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
+            // settingsToolStrip
+            // 
+            this.settingsToolStrip.Name = "settingsToolStrip";
+            this.settingsToolStrip.Size = new System.Drawing.Size(134, 22);
+            this.settingsToolStrip.Text = "Настройки";
+            this.settingsToolStrip.Click += new System.EventHandler(this.settingsToolStrip_Click);
+            // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.closeToolStripMenuItem.Text = "Закрыть";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -248,11 +256,12 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.resProcessingBtn);
             this.groupBox4.Controls.Add(this.calcCardsBtn);
             this.groupBox4.Controls.Add(this.processesBtn);
             this.groupBox4.Location = new System.Drawing.Point(12, 321);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(398, 68);
+            this.groupBox4.Size = new System.Drawing.Size(398, 107);
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Технологические карты";
@@ -267,18 +276,21 @@
             this.calcCardsBtn.UseVisualStyleBackColor = true;
             this.calcCardsBtn.Click += new System.EventHandler(this.calcCardsBtn_Click);
             // 
-            // settingsToolStrip
+            // resProcessingBtn
             // 
-            this.settingsToolStrip.Name = "settingsToolStrip";
-            this.settingsToolStrip.Size = new System.Drawing.Size(152, 22);
-            this.settingsToolStrip.Text = "Настройки";
-            this.settingsToolStrip.Click += new System.EventHandler(this.settingsToolStrip_Click);
+            this.resProcessingBtn.Location = new System.Drawing.Point(7, 58);
+            this.resProcessingBtn.Name = "resProcessingBtn";
+            this.resProcessingBtn.Size = new System.Drawing.Size(176, 33);
+            this.resProcessingBtn.TabIndex = 2;
+            this.resProcessingBtn.Text = "Обработка ингридиентов";
+            this.resProcessingBtn.UseVisualStyleBackColor = true;
+            this.resProcessingBtn.Click += new System.EventHandler(this.resProcessingBtn_Click);
             // 
             // NavigationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(421, 405);
+            this.ClientSize = new System.Drawing.Size(421, 440);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -325,5 +337,6 @@
         private System.Windows.Forms.Button kitchenWriteoffsBtn;
         private System.Windows.Forms.Button calcCardsBtn;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStrip;
+        private System.Windows.Forms.Button resProcessingBtn;
     }
 }
