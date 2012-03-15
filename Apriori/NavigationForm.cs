@@ -12,7 +12,8 @@ namespace Apriori
     {
         public NavigationForm()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            this.Icon = new Icon("icon.ico");    
         }
 
         private void processesBtn_Click(object sender, EventArgs e)

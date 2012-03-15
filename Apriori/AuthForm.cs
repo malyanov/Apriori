@@ -15,7 +15,8 @@ namespace Apriori
         {
             InitializeComponent();
             navForm.FormClosed += new FormClosedEventHandler(navForm_FormClosed);
-            passwordField.KeyDown += new KeyEventHandler(passwordField_KeyDown);                    
+            passwordField.KeyDown += new KeyEventHandler(passwordField_KeyDown);
+            this.Icon = new Icon("icon.ico");    
         }
 
         void passwordField_KeyDown(object sender, KeyEventArgs e)

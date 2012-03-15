@@ -49,8 +49,8 @@
             this.оПрограммаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.calcCardsBtn = new System.Windows.Forms.Button();
             this.resProcessingBtn = new System.Windows.Forms.Button();
+            this.calcCardsBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -266,16 +266,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Технологические карты";
             // 
-            // calcCardsBtn
-            // 
-            this.calcCardsBtn.Location = new System.Drawing.Point(212, 19);
-            this.calcCardsBtn.Name = "calcCardsBtn";
-            this.calcCardsBtn.Size = new System.Drawing.Size(177, 33);
-            this.calcCardsBtn.TabIndex = 1;
-            this.calcCardsBtn.Text = "Рассчёт карт";
-            this.calcCardsBtn.UseVisualStyleBackColor = true;
-            this.calcCardsBtn.Click += new System.EventHandler(this.calcCardsBtn_Click);
-            // 
             // resProcessingBtn
             // 
             this.resProcessingBtn.Location = new System.Drawing.Point(7, 58);
@@ -285,6 +275,16 @@
             this.resProcessingBtn.Text = "Обработка ингридиентов";
             this.resProcessingBtn.UseVisualStyleBackColor = true;
             this.resProcessingBtn.Click += new System.EventHandler(this.resProcessingBtn_Click);
+            // 
+            // calcCardsBtn
+            // 
+            this.calcCardsBtn.Location = new System.Drawing.Point(212, 19);
+            this.calcCardsBtn.Name = "calcCardsBtn";
+            this.calcCardsBtn.Size = new System.Drawing.Size(177, 33);
+            this.calcCardsBtn.TabIndex = 1;
+            this.calcCardsBtn.Text = "Рассчёт карт";
+            this.calcCardsBtn.UseVisualStyleBackColor = true;
+            this.calcCardsBtn.Click += new System.EventHandler(this.calcCardsBtn_Click);
             // 
             // NavigationForm
             // 
