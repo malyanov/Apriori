@@ -85,5 +85,10 @@ namespace Apriori
                 }
             }
         }
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

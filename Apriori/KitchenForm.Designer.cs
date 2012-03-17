@@ -231,6 +231,7 @@
             this.closeBtn.TabIndex = 9;
             this.closeBtn.Text = "Закрыть";
             this.closeBtn.UseVisualStyleBackColor = true;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
             // haveField
             // 

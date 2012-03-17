@@ -38,7 +38,8 @@ namespace Apriori
         {
             // TODO: This line of code loads data into the 'cafeDataSet.KitchenView' table. You can move, or remove it, as needed.
             this.kitchenViewTableAdapter.Fill(this.cafeDataSet.KitchenView);
-            amountField.Value = 1;
+            if(amountField.Minimum>0)
+                amountField.Value = 1;
         }
 
         private void saleBtn_Click(object sender, EventArgs e)

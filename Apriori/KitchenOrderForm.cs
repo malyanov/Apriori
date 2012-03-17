@@ -16,6 +16,13 @@ namespace Apriori
         {
             InitializeComponent();
             maxDiff = float.Parse(variablesTableAdapter.getVarByName("MAX_PRICE_DIF"));
+            dishField.SelectedValueChanged += new EventHandler(dishField_SelectedValueChanged);
+        }
+
+        void dishField_SelectedValueChanged(object sender, EventArgs e)
+        {
+            kitchenGrid.DataSource = null;
+            amountField.Value = 1;
         }
 
         private void KitchenForm_Load(object sender, EventArgs e)
@@ -28,6 +35,7 @@ namespace Apriori
 
         private void calculateBtn_Click(object sender, EventArgs e)
         {
+            kitchenGrid.DataSource = null;
             if (dishField.SelectedValue == null)
                 return;
             DataTable resourcesTable = dishesResourcesTableAdapter.GetDataByDishID((int)dishField.SelectedValue);
@@ -39,7 +47,11 @@ namespace Apriori
             {
                 amount=(float)resourcesTable.Rows[i]["amount"]*multiplier;
                 resourceId = (int)resourcesTable.Rows[i]["resource_id"];
-                if (stockIncomesTableAdapter.getResourceAmount(resourceId) < amount)
+                object obj=stockIncomesTableAdapter.getResourceAmount(resourceId);
+                float resAmount = 0;
+                if (obj != null)
+                    resAmount = (float)(decimal)obj;
+                if (resAmount < amount)
                 {
                     MessageBox.Show("На складе недостаточно ингридиента " 
                         + resourcesTable.Rows[i]["name"]+"! Требуется "+amount+" единиц.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -69,14 +81,14 @@ namespace Apriori
                     if (amount <= sum + a)
                     {
                         row["current_amount"] = amount - sum;
-                        totalPrice += ((float)row["current_amount"] * ((float)row["item_price"] + (float)row["season_margin"]));
+                        totalPrice += ((float)row["current_amount"] * ((float)row["item_price"] + (float)(decimal)row["season_margin"]));
                         resultTable.ImportRow(row);
                         break;
                     }
                     else
                     {
                         sum += a;
-                        totalPrice += ((float)row["current_amount"] * ((float)row["item_price"] + (float)row["season_margin"]));
+                        totalPrice += ((float)row["current_amount"] * ((float)row["item_price"] + (float)(decimal)row["season_margin"]));
                         resultTable.ImportRow(row);
                     }
                     j++;

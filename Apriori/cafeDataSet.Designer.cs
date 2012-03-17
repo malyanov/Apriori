@@ -2652,8 +2652,6 @@ namespace Apriori {
             
             private global::System.Data.DataColumn columntrans_time;
             
-            private global::System.Data.DataColumn columnamount;
-            
             private global::System.Data.DataColumn columnstock_time;
             
             private global::System.Data.DataColumn columnresource_name;
@@ -2662,17 +2660,11 @@ namespace Apriori {
             
             private global::System.Data.DataColumn columndish_name;
             
-            private global::System.Data.DataColumn columnkitchen_amount;
-            
             private global::System.Data.DataColumn columnstock_id;
             
             private global::System.Data.DataColumn columnkitchen_id;
             
-            private global::System.Data.DataColumn columnkitchen_price;
-            
-            private global::System.Data.DataColumn columnmargin;
-            
-            private global::System.Data.DataColumn columnfix_price;
+            private global::System.Data.DataColumn columnamount;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -2725,14 +2717,6 @@ namespace Apriori {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn amountColumn {
-                get {
-                    return this.columnamount;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn stock_timeColumn {
                 get {
                     return this.columnstock_time;
@@ -2765,14 +2749,6 @@ namespace Apriori {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn kitchen_amountColumn {
-                get {
-                    return this.columnkitchen_amount;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn stock_idColumn {
                 get {
                     return this.columnstock_id;
@@ -2789,25 +2765,9 @@ namespace Apriori {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn kitchen_priceColumn {
+            public global::System.Data.DataColumn amountColumn {
                 get {
-                    return this.columnkitchen_price;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn marginColumn {
-                get {
-                    return this.columnmargin;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn fix_priceColumn {
-                get {
-                    return this.columnfix_price;
+                    return this.columnamount;
                 }
             }
             
@@ -2848,22 +2808,18 @@ namespace Apriori {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public StockTransViewRow AddStockTransViewRow(int id, System.DateTime trans_time, float amount, System.DateTime stock_time, string resource_name, float stock_item_price, string dish_name, string kitchen_amount, int stock_id, int kitchen_id, float kitchen_price, int margin, float fix_price) {
+            public StockTransViewRow AddStockTransViewRow(int id, System.DateTime trans_time, System.DateTime stock_time, string resource_name, float stock_item_price, string dish_name, int stock_id, int kitchen_id, double amount) {
                 StockTransViewRow rowStockTransViewRow = ((StockTransViewRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
                         trans_time,
-                        amount,
                         stock_time,
                         resource_name,
                         stock_item_price,
                         dish_name,
-                        kitchen_amount,
                         stock_id,
                         kitchen_id,
-                        kitchen_price,
-                        margin,
-                        fix_price};
+                        amount};
                 rowStockTransViewRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowStockTransViewRow);
                 return rowStockTransViewRow;
@@ -2901,17 +2857,13 @@ namespace Apriori {
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
                 this.columntrans_time = base.Columns["trans_time"];
-                this.columnamount = base.Columns["amount"];
                 this.columnstock_time = base.Columns["stock_time"];
                 this.columnresource_name = base.Columns["resource_name"];
                 this.columnstock_item_price = base.Columns["stock_item_price"];
                 this.columndish_name = base.Columns["dish_name"];
-                this.columnkitchen_amount = base.Columns["kitchen_amount"];
                 this.columnstock_id = base.Columns["stock_id"];
                 this.columnkitchen_id = base.Columns["kitchen_id"];
-                this.columnkitchen_price = base.Columns["kitchen_price"];
-                this.columnmargin = base.Columns["margin"];
-                this.columnfix_price = base.Columns["fix_price"];
+                this.columnamount = base.Columns["amount"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2921,8 +2873,6 @@ namespace Apriori {
                 base.Columns.Add(this.columnid);
                 this.columntrans_time = new global::System.Data.DataColumn("trans_time", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntrans_time);
-                this.columnamount = new global::System.Data.DataColumn("amount", typeof(float), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnamount);
                 this.columnstock_time = new global::System.Data.DataColumn("stock_time", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstock_time);
                 this.columnresource_name = new global::System.Data.DataColumn("resource_name", typeof(string), null, global::System.Data.MappingType.Element);
@@ -2931,34 +2881,24 @@ namespace Apriori {
                 base.Columns.Add(this.columnstock_item_price);
                 this.columndish_name = new global::System.Data.DataColumn("dish_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndish_name);
-                this.columnkitchen_amount = new global::System.Data.DataColumn("kitchen_amount", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnkitchen_amount);
                 this.columnstock_id = new global::System.Data.DataColumn("stock_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstock_id);
                 this.columnkitchen_id = new global::System.Data.DataColumn("kitchen_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnkitchen_id);
-                this.columnkitchen_price = new global::System.Data.DataColumn("kitchen_price", typeof(float), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnkitchen_price);
-                this.columnmargin = new global::System.Data.DataColumn("margin", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmargin);
-                this.columnfix_price = new global::System.Data.DataColumn("fix_price", typeof(float), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfix_price);
+                this.columnamount = new global::System.Data.DataColumn("amount", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnamount);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AllowDBNull = false;
                 this.columnid.Unique = true;
                 this.columntrans_time.AllowDBNull = false;
-                this.columnamount.AllowDBNull = false;
                 this.columnstock_time.AllowDBNull = false;
                 this.columnresource_name.MaxLength = 100;
                 this.columnstock_item_price.AllowDBNull = false;
                 this.columndish_name.MaxLength = 200;
-                this.columnkitchen_amount.MaxLength = 10;
                 this.columnstock_id.AllowDBNull = false;
                 this.columnkitchen_id.AllowDBNull = false;
-                this.columnkitchen_price.AllowDBNull = false;
-                this.columnmargin.AllowDBNull = false;
-                this.columnfix_price.AllowDBNull = false;
+                this.columnamount.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8049,17 +7989,6 @@ namespace Apriori {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public float amount {
-                get {
-                    return ((float)(this[this.tableStockTransView.amountColumn]));
-                }
-                set {
-                    this[this.tableStockTransView.amountColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime stock_time {
                 get {
                     return ((global::System.DateTime)(this[this.tableStockTransView.stock_timeColumn]));
@@ -8114,22 +8043,6 @@ namespace Apriori {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string kitchen_amount {
-                get {
-                    try {
-                        return ((string)(this[this.tableStockTransView.kitchen_amountColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'kitchen_amount\' in table \'StockTransView\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableStockTransView.kitchen_amountColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int stock_id {
                 get {
                     return ((int)(this[this.tableStockTransView.stock_idColumn]));
@@ -8152,34 +8065,17 @@ namespace Apriori {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public float kitchen_price {
+            public double amount {
                 get {
-                    return ((float)(this[this.tableStockTransView.kitchen_priceColumn]));
+                    try {
+                        return ((double)(this[this.tableStockTransView.amountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'amount\' in table \'StockTransView\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableStockTransView.kitchen_priceColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int margin {
-                get {
-                    return ((int)(this[this.tableStockTransView.marginColumn]));
-                }
-                set {
-                    this[this.tableStockTransView.marginColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public float fix_price {
-                get {
-                    return ((float)(this[this.tableStockTransView.fix_priceColumn]));
-                }
-                set {
-                    this[this.tableStockTransView.fix_priceColumn] = value;
+                    this[this.tableStockTransView.amountColumn] = value;
                 }
             }
             
@@ -8209,14 +8105,14 @@ namespace Apriori {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iskitchen_amountNull() {
-                return this.IsNull(this.tableStockTransView.kitchen_amountColumn);
+            public bool IsamountNull() {
+                return this.IsNull(this.tableStockTransView.amountColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setkitchen_amountNull() {
-                this[this.tableStockTransView.kitchen_amountColumn] = global::System.Convert.DBNull;
+            public void SetamountNull() {
+                this[this.tableStockTransView.amountColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -12162,17 +12058,13 @@ SELECT id, stock_id, kitchen_id, trans_time, amount FROM stock_transactions WHER
             tableMapping.DataSetTable = "StockTransView";
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("trans_time", "trans_time");
-            tableMapping.ColumnMappings.Add("amount", "amount");
             tableMapping.ColumnMappings.Add("stock_time", "stock_time");
             tableMapping.ColumnMappings.Add("resource_name", "resource_name");
             tableMapping.ColumnMappings.Add("stock_item_price", "stock_item_price");
             tableMapping.ColumnMappings.Add("dish_name", "dish_name");
-            tableMapping.ColumnMappings.Add("kitchen_amount", "kitchen_amount");
             tableMapping.ColumnMappings.Add("stock_id", "stock_id");
             tableMapping.ColumnMappings.Add("kitchen_id", "kitchen_id");
-            tableMapping.ColumnMappings.Add("kitchen_price", "kitchen_price");
-            tableMapping.ColumnMappings.Add("margin", "margin");
-            tableMapping.ColumnMappings.Add("fix_price", "fix_price");
+            tableMapping.ColumnMappings.Add("amount", "amount");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -12189,9 +12081,8 @@ SELECT id, stock_id, kitchen_id, trans_time, amount FROM stock_transactions WHER
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, trans_time, amount, stock_time, resource_name, stock_item_price, dish_" +
-                "name, kitchen_amount, stock_id, kitchen_id, kitchen_price, fix_price, margin FRO" +
-                "M StockTransView";
+            this._commandCollection[0].CommandText = "SELECT id, trans_time, stock_time, resource_name, stock_item_price, dish_name, st" +
+                "ock_id, kitchen_id, amount FROM StockTransView";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -15112,7 +15003,7 @@ ORDER BY stock_incomes.current_amount";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<double> getResourceAmount(int resource_id) {
+        public virtual object getResourceAmount(int resource_id) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             command.Parameters[0].Value = ((int)(resource_id));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
@@ -15131,10 +15022,10 @@ ORDER BY stock_incomes.current_amount";
             }
             if (((returnValue == null) 
                         || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<double>();
+                return null;
             }
             else {
-                return new global::System.Nullable<double>(((double)(returnValue)));
+                return ((object)(returnValue));
             }
         }
         
