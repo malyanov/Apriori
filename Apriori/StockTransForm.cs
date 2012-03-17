@@ -42,9 +42,9 @@ namespace Apriori
         }
         private void updateSum()
         {
-            float sum = 0;
+            double sum = 0;            
             foreach (DataGridViewRow row in transactionsGrid.Rows)
-                sum += ((float)row.Cells[3].Value * (float)row.Cells[5].Value);
+                sum += ((double)row.Cells[3].Value * (float)row.Cells[5].Value);
             sumField.Text = String.Format("{0:0.00}", sum);
         }
     }    
