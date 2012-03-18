@@ -20,6 +20,9 @@ C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Release\Apriori.ViewSal
 C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Release\Apriori.csproj.GenerateResource.Cache
 C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Release\Apriori.exe
 C:\Users\Kvazar\Dropbox\Projects\Apriori\Apriori\obj\x86\Release\Apriori.pdb
+D:\projects\Apriori\Apriori\bin\Release\Apriori.exe.config
+D:\projects\Apriori\Apriori\bin\Release\Apriori.exe
+D:\projects\Apriori\Apriori\bin\Release\Apriori.pdb
 D:\projects\Apriori\Apriori\obj\x86\Release\Apriori.csprojResolveAssemblyReference.cache
 D:\projects\Apriori\Apriori\obj\x86\Release\Apriori.AboutForm.resources
 D:\projects\Apriori\Apriori\obj\x86\Release\Apriori.AddIngrForm.resources
@@ -43,8 +46,5 @@ D:\projects\Apriori\Apriori\obj\x86\Release\Apriori.StockForm.resources
 D:\projects\Apriori\Apriori\obj\x86\Release\Apriori.StockTransForm.resources
 D:\projects\Apriori\Apriori\obj\x86\Release\Apriori.ViewSalesForm.resources
 D:\projects\Apriori\Apriori\obj\x86\Release\Apriori.csproj.GenerateResource.Cache
-D:\projects\Apriori\Apriori\bin\Release\Apriori.exe.config
-D:\projects\Apriori\Apriori\bin\Release\Apriori.exe
-D:\projects\Apriori\Apriori\bin\Release\Apriori.pdb
 D:\projects\Apriori\Apriori\obj\x86\Release\Apriori.exe
 D:\projects\Apriori\Apriori\obj\x86\Release\Apriori.pdb

@@ -103,10 +103,10 @@ namespace Apriori
             
             resultTable.Columns["current_amount"].ColumnName = "Количество";
             resultTable.Columns["add_time"].ColumnName = "Дата партии на складе";
-            resultTable.Columns["name"].ColumnName = "Ингридиент";
+            resultTable.Columns["name"].ColumnName = "Ингридиент";            
             resultTable.Columns["item_price"].ColumnName = "Цена единицы, руб.";
             resultTable.Columns["season_margin"].ColumnName = "Сезонная наценка, руб.";
-            resultTable.Columns["id"].ColumnName = "№";
+            resultTable.Columns["id"].ColumnName = "№";            
             kitchenGrid.DataSource = resultTable;
             confirmBtn.Enabled = true;
         }

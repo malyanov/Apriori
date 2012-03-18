@@ -10709,7 +10709,7 @@ SELECT id, dish_id, resource_id, amount, part FROM dishes_resources WHERE (id = 
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        dishes_resources.id, dishes_resources.resource_id, dishes_resources.amount, resources.name, dishes_resources.dish_id, dishes_resources.part
+            this._commandCollection[1].CommandText = @"SELECT        dishes_resources.id, dishes_resources.resource_id, dishes_resources.dish_id, dishes_resources.amount, resources.name, dishes_resources.part
 FROM            dishes_resources INNER JOIN
                          resources ON dishes_resources.resource_id = resources.id
 WHERE        (dishes_resources.dish_id = @dish_id)";
@@ -14804,7 +14804,7 @@ SELECT id, add_time, resource_id, income_amount, current_amount, item_price FROM
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        stock_incomes.id, stock_incomes.add_time, stock_incomes.current_amount, stock_incomes.item_price, resources.name, stock_incomes.resource_id, 
+            this._commandCollection[1].CommandText = @"SELECT        stock_incomes.id, stock_incomes.add_time, resources.name, stock_incomes.current_amount, stock_incomes.item_price, stock_incomes.resource_id, 
                          stock_incomes.income_amount, resources.season_margin
 FROM            stock_incomes INNER JOIN
                          resources ON stock_incomes.resource_id = resources.id

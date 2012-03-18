@@ -17,8 +17,8 @@ namespace Apriori
             navForm.FormClosed += new FormClosedEventHandler(navForm_FormClosed);
             passwordField.KeyDown += new KeyEventHandler(passwordField_KeyDown);
             this.Icon = new Icon("icon.ico");
-            loginField.Text = "admin";
-            passwordField.Text = "12345";
+            //loginField.Text = "admin";
+            //passwordField.Text = "12345";
         }
 
         void passwordField_KeyDown(object sender, KeyEventArgs e)
